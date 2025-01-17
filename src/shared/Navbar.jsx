@@ -9,10 +9,13 @@ const Navbar = () => {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/menu">Menu</NavLink>
+            <NavLink to="/community">Community</NavLink>
           </li>
           <li>
-            <NavLink to="/order/Pizza">Order</NavLink>
+            <NavLink to="/aboutUs">About Us</NavLink>
+          </li>
+          <li>
+            <NavLink to="/trips">Trips</NavLink>
           </li>
         </>
       );
@@ -46,7 +49,7 @@ const Navbar = () => {
             </div>
             <div>
             <div className="flex">
-            <a className=" text-4xl">TourVibe</a>
+            <a className="text-4xl font-bold">TourVibe</a>
             <img className="w-10 object-cover" src={logo} alt="" />
             </div>
             <p className="text-xs ml-10">Journey Beyond Limits</p>
@@ -74,7 +77,7 @@ const Navbar = () => {
             )}
           </div> */}
           <div className="navbar-end">
-            <button className="btn">Login</button>
+            <button className="btn btn-ghost">Login</button>
           </div>
         </div>
       </div>
