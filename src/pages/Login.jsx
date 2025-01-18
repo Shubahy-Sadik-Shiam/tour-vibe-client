@@ -1,8 +1,37 @@
 import { FcGoogle } from "react-icons/fc";
 import img from "../assets/login.webp";
 import { FaFacebook, FaGithub } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import GoogleLogin from "../shared/GoogleLogin";
+import useAuth from "../hooks/useAuth";
+import Toast from "../hooks/Toast";
+import ForgetPassword from "../components/ForgetPassword";
 const Login = () => {
+
+  const {loginUser} = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    loginUser(email, password).then((result) => {
+      console.log(result.user);
+      Toast.fire({
+        icon: "success",
+        title: "Signed in successfully",
+      });
+      // navigate(from, { replace: true });
+    })
+    .catch(error=>{
+      console.log(error);
+      Toast.fire({
+        icon: "error",
+        title: "Oppss! Login failed! Please try again.",
+      });
+    })
+  };
   return (
     <div className="lg:flex lg:hero lg:h-[728px]">
       <div
@@ -26,7 +55,8 @@ const Login = () => {
           Welcome
         </h2>
         <p className="text-center mt-2">Login with Email</p>
-        <form className="w-1/2 mx-auto mt-4">
+        <form onSubmit={handleLogin} className="w-1/2 mx-auto mt-4">
+        {/* Email */}
           <div>
             <label className="label">
               <span className="label-text text-info font-semibold">
@@ -43,9 +73,11 @@ const Login = () => {
                 <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
                 <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
               </svg>
-              <input type="text" className="grow" placeholder="Email" />
+              <input
+              name="email" type="text" className="grow" placeholder="Email" />
             </label>
           </div>
+          {/* Password */}
           <div>
             <label className="label">
               <span className="label-text mt-3 text-info font-semibold">
@@ -67,13 +99,14 @@ const Login = () => {
               </svg>
               <input
                 type="password"
+                name="password"
                 className="grow"
                 placeholder="Type your password here"
               />
             </label>
             <label className="label">
               <a
-                href="#"
+                onClick={() => document.getElementById("my_modal_5").showModal()}
                 className="label-text-alt link link-hover text-info font-semibold"
               >
                 Forgot password?
@@ -86,9 +119,7 @@ const Login = () => {
         </form>
         <div className="divider w-1/3 mx-auto">OR</div>
         <div className="flex justify-center gap-3">
-          <button className="btn text-3xl px-6">
-            <FcGoogle />
-          </button>
+          <GoogleLogin></GoogleLogin>
           <button className="btn text-3xl px-6">
             <FaGithub />
           </button>
@@ -101,6 +132,7 @@ const Login = () => {
           <Link to="/register"><span className="font-bold text-info"> Register Now</span></Link>
         </p>
       </div>
+      <ForgetPassword></ForgetPassword>
     </div>
   );
 };
