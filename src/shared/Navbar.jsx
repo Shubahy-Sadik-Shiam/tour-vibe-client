@@ -1,8 +1,9 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.png"
 
 
 const Navbar = () => {
+  const user = false;
     const links = (
         <>
           <li>
@@ -58,7 +59,7 @@ const Navbar = () => {
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">{links}</ul>
           </div>
-          {/* <div className="navbar-end">
+          <div className="navbar-end">
             {user ? (
               <>
                 <img
@@ -75,10 +76,10 @@ const Navbar = () => {
                 Login
               </Link>
             )}
-          </div> */}
-          <div className="navbar-end">
-            <button className="btn btn-ghost">Login</button>
           </div>
+          {/* <div className="navbar-end">
+            <button className="btn text-white btn-outline">Login</button>
+          </div> */}
         </div>
       </div>
     );
