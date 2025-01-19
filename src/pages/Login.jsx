@@ -7,8 +7,7 @@ import useAuth from "../hooks/useAuth";
 import Toast from "../hooks/Toast";
 import ForgetPassword from "../components/ForgetPassword";
 const Login = () => {
-
-  const {loginUser} = useAuth();
+  const { loginUser } = useAuth();
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
@@ -16,21 +15,22 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    loginUser(email, password).then((result) => {
-      console.log(result.user);
-      Toast.fire({
-        icon: "success",
-        title: "Signed in successfully",
+    loginUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        Toast.fire({
+          icon: "success",
+          title: "Signed in successfully",
+        });
+        // navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+        Toast.fire({
+          icon: "error",
+          title: "Oppss! Login failed! Please try again.",
+        });
       });
-      // navigate(from, { replace: true });
-    })
-    .catch(error=>{
-      console.log(error);
-      Toast.fire({
-        icon: "error",
-        title: "Oppss! Login failed! Please try again.",
-      });
-    })
   };
   return (
     <div className="lg:flex lg:hero lg:h-[728px]">
@@ -51,17 +51,13 @@ const Login = () => {
         </div>
       </div>
       <div className="lg:w-1/2">
-        <h2 className="text-5xl font-bold text-center text-info">
-          Welcome
-        </h2>
+        <h2 className="text-5xl font-bold text-center text-info">Welcome</h2>
         <p className="text-center mt-2">Login with Email</p>
         <form onSubmit={handleLogin} className="w-1/2 mx-auto mt-4">
-        {/* Email */}
+          {/* Email */}
           <div>
             <label className="label">
-              <span className="label-text text-info font-semibold">
-                Email
-              </span>
+              <span className="label-text text-info font-semibold">Email</span>
             </label>
             <label className="input input-bordered input-info flex items-center gap-2">
               <svg
@@ -74,7 +70,12 @@ const Login = () => {
                 <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
               </svg>
               <input
-              name="email" type="text" className="grow" placeholder="Email" />
+                name="email"
+                required
+                type="text"
+                className="grow"
+                placeholder="Email"
+              />
             </label>
           </div>
           {/* Password */}
@@ -99,6 +100,7 @@ const Login = () => {
               </svg>
               <input
                 type="password"
+                required
                 name="password"
                 className="grow"
                 placeholder="Type your password here"
@@ -106,14 +108,19 @@ const Login = () => {
             </label>
             <label className="label">
               <a
-                onClick={() => document.getElementById("my_modal_5").showModal()}
+                onClick={() =>
+                  document.getElementById("my_modal_5").showModal()
+                }
                 className="label-text-alt link link-hover text-info font-semibold"
               >
                 Forgot password?
               </a>
             </label>
           </div>
-          <button type="submit" className="btn my-3 btn-info btn-block text-white">
+          <button
+            type="submit"
+            className="btn my-3 btn-info btn-block text-white"
+          >
             Login
           </button>
         </form>
@@ -129,7 +136,9 @@ const Login = () => {
         </div>
         <p className="text-center mt-4">
           Don't have an account?
-          <Link to="/register"><span className="font-bold text-info"> Register Now</span></Link>
+          <Link to="/register">
+            <span className="font-bold text-info"> Register Now</span>
+          </Link>
         </p>
       </div>
       <ForgetPassword></ForgetPassword>

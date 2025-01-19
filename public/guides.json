@@ -1,0 +1,82 @@
+[
+  {
+    "image": "https://i.ibb.co.com/9b33QRR/Screenshot2024-12-15at3-11-23-PM.webp",
+    "name": "Alia Bhatt",
+    "role": "tour guides",
+    "location": "Dhaka, Bangladesh",
+    "rating": 4,
+    "about": "Alia is an experienced tour guide in Dhaka, specializing in the rich history and culture of Bangladesh. With over 10 years of guiding, she is passionate about sharing the stories behind Dhaka's vibrant streets and local traditions. Sophia has a deep love for Bengali cuisine, and she often includes food tours as part of her service, ensuring guests experience the full flavor of the city."
+  },
+  {
+    "image": "https://i.ibb.co.com/QkcTyyz/ab6761610000e5eb7f08207d9cc1e2ba90bf3a30.jpg",
+    "name": "Katrina Kaif",
+    "role": "tour guides",
+    "location": "Chittagong, Bangladesh",
+    "rating": 4,
+    "about": "Katrina is a local guide based in Chittagong, where he has lived all his life. He specializes in nature tours and the stunning landscapes around the city, including Cox’s Bazar. Liam's deep knowledge of the area’s flora, fauna, and historical landmarks make him the perfect guide for eco-tourism enthusiasts or those looking to explore the outdoors."
+  },
+  {
+    "image": "https://i.ibb.co.com/k2DFq5s/Vidya-Balan-min.png",
+    "name": "Vidya Balan",
+    "role": "tour guides",
+    "location": "Sylhet, Bangladesh",
+    "rating": 5,
+    "about": "Vidya Balanis an expert in the history and natural beauty of Sylhet, a region known for its tea gardens and scenic landscapes. She has been guiding for over 8 years and is deeply passionate about the cultural heritage of the Sylheti people. Amara takes pride in offering personalized tours that blend history, culture, and nature, offering a unique experience of the region."
+  },
+  {
+    "image": "https://i.ibb.co.com/T1ktKRm/Nandini-2024-8-3-6-4-54-thumbnail.jpg",
+    "name": "Aishwarya",
+    "role": "tour guides",
+    "location": "Rajshahi, Bangladesh",
+    "rating": 5,
+    "about": "Aishwarya is a local historian based in Rajshahi, with an in-depth understanding of the region's ancient temples, historical sites, and the renowned mango industry. His tours are not just about sightseeing, but about immersing visitors in the rich stories of the area. James is particularly known for his engaging storytelling and has a knack for bringing the past to life with enthusiasm."
+  },
+  {
+    "image": "https://i.ibb.co.com/FDfRhvT/Beauty-Plus-Me-20180919220656-save-002.jpg",
+    "name": "Shahrukh Khan",
+    "role": "tour guides",
+    "location": "Khulna, Bangladesh",
+    "rating": 5,
+    "about": "Shahrukh has spent years exploring the Sundarbans, the largest mangrove forest in the world, and is a top guide for wildlife and adventure tours in Khulna. Specializing in eco-tourism, Maria takes guests on boat tours through the forest, offering unique insights into the flora and fauna, particularly the Bengal tigers. Her tours combine nature with an educational experience, making her one of the top guides in the region."
+  },
+  {
+    "image": "https://i.ibb.co.com/YjfHScg/Imran-Khan.jpg",
+    "name": "Imran Khan",
+    "role": "tour guides",
+    "location": "Barisal, Bangladesh",
+    "rating": 4,
+    "about": "Imran is a highly experienced guide in Barisal, focusing on off-the-beaten-path tours in the coastal regions of Bangladesh. He is passionate about the local culture, agriculture, and riverine life. Shahidul offers tours that explore the hidden gems of Barisal, including the floating guava markets and the lush green villages. His deep connection with the local communities and his storytelling ability make his tours truly special."
+  },
+  {
+    "image": "https://i.ibb.co.com/HGHq9P5/1714747577.jpg",
+    "name": "Akhil Akkeneni",
+    "role": "tour guides",
+    "location": "Mymensingh, Bangladesh",
+    "rating": 5,
+    "about": "Akhil is an expert guide specializing in cultural and historical tours of Mymensingh. She has a wealth of knowledge about the traditional Bangladeshi arts, crafts, and architecture. Farida takes visitors on immersive journeys through the local markets, offering insight into the life and culture of the people of Mymensingh. With a warm personality, she’s known for creating tours that feel like a visit to a friend’s home."
+  },
+  {
+    "image": "https://i.ibb.co.com/KxtK0c9/sidharth-malhotra-indian-police-force-d.jpg",
+    "name": "Sidharth Malhotra",
+    "role": "tour guides",
+    "location": "Tangail, Bangladesh",
+    "rating": 4,
+    "about": "Sidharth has been guiding visitors through Tangail for over 12 years, sharing his expertise in the region's agriculture, particularly the famous Tangail sarees. Zubair offers a unique experience for those interested in traditional crafts and rural life, as well as providing history and culture tours of the surrounding areas. His tours focus on connecting people with the history and artistry of Tangail."
+  },
+  {
+    "image": "https://i.ibb.co.com/T43Mt66/the-most-handsome-actors-in-indian-film-bollywood-industry.jpg",
+    "name": "Hrithik Roshan",
+    "role": "tour guides",
+    "location": "Rangpur, Bangladesh",
+    "rating": 4,
+    "about": "Hrithik is a passionate guide based in Rangpur, known for her insightful rural tours and agricultural heritage walks. With a deep love for the land, Rupa offers an authentic rural Bangladeshi experience, showing visitors how local farmers cultivate crops and engage in traditional farming practices. She provides a unique glimpse into the lives of the rural population and their customs."
+  },
+  {
+    "image": "https://i.ibb.co.com/3TZJ4p0/dulquer-salmaan-2.jpg",
+    "name": "Dulquer Salmaan",
+    "role": "tour guides",
+    "location": "Comilla, Bangladesh",
+    "rating": 5,
+    "about": "Dulquer is an expert in the historical landmarks of Comilla and the surrounding areas. With a background in archaeology, he offers insightful tours of ancient ruins and temples, helping visitors understand the rich heritage of the region. His tours also cover Comilla’s famous Buddhist sites, making him a top choice for anyone interested in history, architecture, and archaeology."
+  }
+]

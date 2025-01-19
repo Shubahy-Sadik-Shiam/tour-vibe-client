@@ -1,0 +1,208 @@
+[
+    {
+      "tripPhoto": "https://i.ibb.co.com/qpnTJsZ/ev-ert5t-n5-800x450.jpg",
+      "tripTitle": "Sundarbans Adventure Tour",
+      "tourType": "Adventure",
+      "price": 150.0,
+      "images": [
+        "https://i.ibb.co.com/qpnTJsZ/ev-ert5t-n5-800x450.jpg",
+        "https://i.ibb.co.com/gybKNcw/Eco-min.jpg",
+        "https://i.ibb.co.com/LhZDkNd/6568412-Sundarban-river-mangrove-forest.jpg",
+        "https://i.ibb.co.com/2k7HrqJ/1596032487701.jpg",
+        "https://i.ibb.co.com/z8yB3wZ/34526222055-c9cc1250a7-b.jpg"
+      ],
+      "rating": 4.5,
+      "shortDescription": "Embark on an unforgettable adventure to the Sundarbans, the largest mangrove forest in the world and a UNESCO World Heritage Site. This pristine wilderness is home to the elusive Royal Bengal Tiger, exotic birds, and spotted deer. Explore intricate waterways, enjoy guided safaris, and cruise through serene rivers and creeks.",
+      "duration": "3 Days, 2 Nights",
+      "tourPlans": {
+        "Day 1": "Departure from Dhaka, cruise into the Sundarbans, and settle into a houseboat.",
+        "Day 2": "Morning safari, wildlife spotting, and exploring fishing villages.",
+        "Day 3": "Bird-watching session and return to Dhaka."
+      }
+    },
+    {
+      "tripPhoto": "https://i.ibb.co.com/Xp3zSsB/1196495-17122303270060592537.jpg",
+      "tripTitle": "Cox's Bazar Beach Retreat",
+      "tourType": "Relaxation",
+      "price": 120.0,
+      "images": [
+        "https://i.ibb.co.com/Xp3zSsB/1196495-17122303270060592537.jpg",
+        "https://i.ibb.co.com/t3dWp4d/Coxsbazar-1.jpg",
+        "https://i.ibb.co.com/nnrXtJ2/Top-10-Things-to-Do-in-Coxs-Bazar.jpg",
+        "https://i.ibb.co.com/JzmS39M/Exploring-Coxs-Bazar.jpg",
+        "https://i.ibb.co.com/zsmDCtj/Coxs-Bazar-Itinerary-5-Days.jpg"
+      ],
+      "rating": 4.8,
+      "shortDescription": "Relax at Cox's Bazar, home to the world's longest natural sea beach. Stroll along golden sands, watch mesmerizing sunsets, and enjoy fresh seafood. Visit Himchari Waterfall, Inani Beach, and the vibrant local markets.",
+      "duration": "2 Days, 1 Night",
+      "tourPlans": {
+        "Day 1": "Arrival, beachside relaxation, and dinner with seafood delicacies.",
+        "Day 2": "Explore Himchari and Inani Beach before departure."
+      }
+    },
+    {
+      "tripPhoto": "https://i.ibb.co.com/vPtV0pW/Lakkatura-Tea-Garden-Women-Worker-jpg.webp",
+      "tripTitle": "Sylhet Tea Garden Tour",
+      "tourType": "Nature",
+      "price": 100.0,
+      "images": [
+        "https://i.ibb.co.com/vPtV0pW/Lakkatura-Tea-Garden-Women-Worker-jpg.webp",
+        "https://i.ibb.co.com/0VGbs8x/Lakkatura-Cha-Bagan.jpg",
+        "https://i.ibb.co.com/DRHw3cS/20468151743-a478dc3a24-z.jpg",
+        "https://i.ibb.co.com/tPRgKr5/800px-Tea-garden-in-Sylhet-40349163252.jpg",
+        "https://i.ibb.co.com/Q6STZRX/9782559-best-tea-gardens-Bangladesh.jpg"
+      ],
+      "rating": 4.7,
+      "shortDescription": "Journey to Sylhet to explore lush tea gardens, scenic hills, and serene landscapes. Visit Ratargul Swamp Forest and Jaflong, home to natural wonders and captivating beauty.",
+      "duration": "2 Days, 1 Night",
+      "tourPlans": {
+        "Day 1": "Travel to Sylhet and explore Ratargul Swamp Forest.",
+        "Day 2": "Morning visit to Jaflong and return home."
+      }
+    },
+    {
+      "tripPhoto": "https://i.ibb.co.com/wh6Ykb2/sustainable-tourism-sylhet-1024x585.jpg",
+      "tripTitle": "Srimangal Eco Tour",
+      "tourType": "Eco",
+      "price": 90.0,
+      "images": [
+        "https://i.ibb.co.com/wh6Ykb2/sustainable-tourism-sylhet-1024x585.jpg",
+        "https://i.ibb.co.com/FV8Fh07/p121015vxb.jpg",
+        "https://i.ibb.co.com/9bz32Tm/official-name-of-this.jpg",
+        "https://i.ibb.co.com/KrwfKJ2/awsm-but-need-a-lot-of.jpg",
+        "https://i.ibb.co.com/jyt6QSc/21758801233-96ff4c8ab4-b.jpg"
+      ],
+      "rating": 4.6,
+      "shortDescription": "Discover Srimangal's pristine charm with its tea gardens, tribal villages, and tranquil forests. Visit Lawachara National Park and experience the famous seven-layer tea.",
+      "duration": "3 Days, 2 Nights",
+      "tourPlans": {
+        "Day 1": "Arrival and guided tour through Lawachara National Park.",
+        "Day 2": "Visit Madhabpur Lake and tribal villages.",
+        "Day 3": "Enjoy seven-layer tea and return."
+      }
+    },
+    {
+      "tripPhoto": "https://i.ibb.co.com/rt94wTm/204-36376273530-3c9a0335f5-b-copyjpg.jpg",
+      "tripTitle": "Bandarban Hill Tract Exploration",
+      "tourType": "Adventure",
+      "price": 200.0,
+      "images": [
+        "https://i.ibb.co.com/rt94wTm/204-36376273530-3c9a0335f5-b-copyjpg.jpg",
+        "https://i.ibb.co.com/XWkvdvT/istockphoto-1308607808-612x612.jpg",
+        "https://i.ibb.co.com/hd1DfRj/y8e-C0-WBz-PEEVy-KIGGjc-M3z-KIgir-EYLTLvio-F3-Ga-P.jpg",
+        "https://i.ibb.co.com/WGWmf81/1v-1-657x493.jpg",
+        "https://i.ibb.co.com/HFkkhWk/204-nilgiri-bandarban-copyjpg.jpg"
+      ],
+      "rating": 4.9,
+      "shortDescription": "Trek through Bandarban's scenic hills, waterfalls, and tribal villages. Visit Nilgiri, Boga Lake, and Nafakhum Waterfall for breathtaking views and thrilling experiences.",
+      "duration": "4 Days, 3 Nights",
+      "tourPlans": {
+        "Day 1": "Travel to Bandarban and settle into a hilltop resort.",
+        "Day 2": "Explore Nilgiri and nearby tribal villages.",
+        "Day 3": "Visit Boga Lake and trek to Nafakhum Waterfall.",
+        "Day 4": "Morning hike and return to Dhaka."
+      }
+    },
+    {
+      "tripPhoto": "https://i.ibb.co.com/NmVMtC5/istockphoto-474259514-612x612.jpg",
+      "tripTitle": "Saint Martin’s Island Getaway",
+      "tourType": "Relaxation",
+      "price": 140.0,
+      "images": [
+        "https://i.ibb.co.com/NmVMtC5/istockphoto-474259514-612x612.jpg",
+        "https://i.ibb.co.com/khJ5cGQ/29b45941879a893e9bfaa4a923ffbebf.jpg",
+        "https://i.ibb.co.com/XkjHRyJ/da284bd31d7a39ed2874320277d2d9f714f3db95f12f429d.jpg",
+        "https://i.ibb.co.com/S34DJrT/anse-marcel-beach-STMARTIN0123-2fd21dab444546f399f2b14582208f82.jpg",
+        "https://i.ibb.co.com/zSh5Jdj/prothomalo-english-2024-11-20-hr12kqo8-Saint-martin.webp"
+      ],
+      "rating": 4.7,
+      "shortDescription": "Escape to Saint Martin’s Island, a tropical paradise known for its crystal-clear waters and coral beaches. Relax by the shore, snorkel, and explore local delicacies.",
+      "duration": "3 Days, 2 Nights",
+      "tourPlans": {
+        "Day 1": "Travel to Saint Martin’s by ferry and settle into a seaside resort.",
+        "Day 2": "Enjoy snorkeling, beach activities, and island exploration.",
+        "Day 3": "Relax by the beach before returning."
+      }
+    },
+    {
+      "tripPhoto": "https://i.ibb.co.com/ZYsRFxH/51807280246-d65dc6edb6-b.jpg",
+      "tripTitle": "Ratargul Swamp Forest Exploration",
+      "tourType": "Eco",
+      "price": 70.0,
+      "images": [
+        "https://i.ibb.co.com/ZYsRFxH/51807280246-d65dc6edb6-b.jpg",
+        "https://i.ibb.co.com/jMpygDv/8760568.webp",
+        "https://i.ibb.co.com/FYPWPNr/Ratargul-Swamp-Forest-Sylhet3.jpg",
+        "https://i.ibb.co.com/m9b9rMY/Ratargul-Swamp-Forest-Sylhet-Bangladesh.jpg",
+        "https://i.ibb.co.com/TgV1qXR/Ratargul-2.jpg"
+      ],
+      "rating": 4.4,
+      "shortDescription": "Immerse yourself in the lush beauty of Ratargul Swamp Forest, one of the few freshwater swamp forests in Bangladesh. Enjoy serene boat rides through the forest.",
+      "duration": "1 Day",
+      "tourPlans": {
+        "Day 1": "Guided boat ride through Ratargul and leisure time exploring nearby attractions."
+      }
+    },
+    {
+      "tripPhoto": "https://i.ibb.co.com/2MfKcBn/Tourism-4r.jpg",
+      "tripTitle": "Rangamati Lake Tour",
+      "tourType": "Nature",
+      "price": 130.0,
+      "images": [
+        "https://i.ibb.co.com/2MfKcBn/Tourism-4r.jpg",
+        "https://i.ibb.co.com/BZBKSv8/sajek-pic-1-1598953304911.webp",
+        "https://i.ibb.co.com/tsgY8GH/istockphoto-477090986-612x612.jpg",
+        "https://i.ibb.co.com/Ryr2FgQ/Rangamati-Bandarban-Coxs-Ba.jpg",
+        "https://i.ibb.co.com/GWwg3Bc/7a.jpg"
+      ],
+      "rating": 4.5,
+      "shortDescription": "Explore the natural beauty of Rangamati, featuring Kaptai Lake, tribal villages, and hanging bridges. Enjoy boat rides and local cuisine.",
+      "duration": "2 Days, 1 Night",
+      "tourPlans": {
+        "Day 1": "Boat ride on Kaptai Lake and visit local tribal villages.",
+        "Day 2": "Explore the Hanging Bridge and enjoy local crafts shopping."
+      }
+    },
+    {
+      "tripPhoto": "https://i.ibb.co.com/vLj6mfW/2742993.webp",
+      "tripTitle": "Historic Khulna & Bagerhat Tour",
+      "tourType": "Heritage",
+      "price": 110.0,
+      "images": [
+        "https://i.ibb.co.com/vLj6mfW/2742993.webp",
+        "https://i.ibb.co.com/pXXRq36/Pithabhog-khulna-jpg.webp",
+        "https://i.ibb.co.com/Vw7j8Tn/khulna-33c5b01c-3402-4b36-87a1-0f9ab7b8b4e-resize-750.webp",
+        "https://i.ibb.co.com/d4ZWMQC/u-A9w01723896512-sub-img-1.jpg",
+        "https://i.ibb.co.com/R9DGmm6/shilaidaha-kuthibari.jpg"
+      ],
+      "rating": 4.3,
+      "shortDescription": "Visit historic sites like the Sixty Dome Mosque and the Mausoleum of Khan Jahan Ali in Bagerhat, a UNESCO World Heritage Site. Learn about the rich heritage of the Khulna region.",
+      "duration": "2 Days, 1 Night",
+      "tourPlans": {
+        "Day 1": "Explore the Sixty Dome Mosque and nearby ruins.",
+        "Day 2": "Visit the Mausoleum of Khan Jahan Ali and surrounding areas before departure."
+      }
+    },
+    {
+        "tripPhoto": "https://i.ibb.co.com/7bk04bz/images-4.jpg",
+        "tripTitle": "Sajek Valley Escape",
+        "tourType": "Adventure",
+        "price": 110.0,
+        "images": [
+          "https://i.ibb.co.com/7bk04bz/images-4.jpg",
+          "https://i.ibb.co.com/w61c6yv/52585302949-d63f097d8d-b.jpg",
+          "https://i.ibb.co.com/t2Q8bHX/sajek-valley-hotels-resorts-low-cost.jpg",
+          "https://i.ibb.co.com/tDcDDr4/deab5d531957d73a0057d50d32f3babf269ef1c1fca30044.jpg",
+          "https://i.ibb.co.com/FxmBc8R/sajek.jpg"
+        ],
+        "rating": 4.9,
+        "shortDescription": "Escape to the breathtaking Sajek Valley, known as the Queen of Hills. Witness the mesmerizing views of rolling hills covered in mist, vibrant sunsets, and the peaceful ambiance of the valley. Experience local tribal culture, traditional cuisines, and explore lush greenery and unique landscapes in this enchanting hill station.",
+        "duration": "2 Days, 1 Night",
+        "tourPlans": {
+          "Day 1": "Travel to Sajek Valley, check into a hilltop cottage, and enjoy the serene beauty of the surroundings. Experience a stunning sunset view and explore the local tribal bazaar.",
+          "Day 2": "Wake up early to witness the sunrise over the hills, take a short trek around the valley, enjoy a hearty breakfast, and return to your destination."
+        }
+      }
+      
+  ]
+  
