@@ -49,12 +49,11 @@ const Banner = () => {
                   modifier: 1,
                   slideShadows: true,
                 }}
-                pagination={true}
+                pagination={false}
                 modules={[EffectCoverflow, Pagination]}
-                className="mySwiper"
               >
                 <SwiperSlide>
-                  <img src={slider1} className="object-cover" />
+                  <img src={slider1} />
                 </SwiperSlide>
                 <SwiperSlide>
                   <img src={slider2} />

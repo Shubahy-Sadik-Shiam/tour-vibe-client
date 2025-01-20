@@ -6,6 +6,7 @@ import GoogleLogin from "../shared/GoogleLogin";
 import useAuth from "../hooks/useAuth";
 import Toast from "../hooks/Toast";
 import ForgetPassword from "../components/ForgetPassword";
+import { Helmet } from "react-helmet-async";
 const Login = () => {
   const { loginUser } = useAuth();
   const navigate = useNavigate();
@@ -34,6 +35,9 @@ const Login = () => {
   };
   return (
     <div className="lg:flex lg:hero lg:h-[728px]">
+      <Helmet>
+        <title>Login - TourVibe</title>
+      </Helmet>
       <div
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url(${img})`,

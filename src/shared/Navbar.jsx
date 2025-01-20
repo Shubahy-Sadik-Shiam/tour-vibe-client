@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
@@ -6,6 +6,8 @@ import Toast from "../hooks/Toast";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
+  const location = useLocation();
+  const isNotHomePage = location.pathname !== "/";
   const links = (
     <>
       <li>
@@ -44,7 +46,9 @@ const Navbar = () => {
   }
   return (
     <div>
-      <div className="navbar w-10/12 fixed z-10  lg:left-32 md:left-16 left-9 text-white py-4 border-b">
+      <div className={`navbar w-10/12 fixed z-10 lg:left-32 md:left-16 left-9 text-white py-4 border-b ${
+        isNotHomePage ? "bg-blue-500" : "bg-transparent"
+      }`}>
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

@@ -3,7 +3,7 @@ const GuidesCard = ({ guide }) => {
   const { image, name, rating, location, _id } = guide;
   return (
     <div className="card bg-base-100 shadow-xl">
-      <figure className="px-10 pt-10">
+      <figure className="px-10">
         <img
           src={image}
           alt="guide"
@@ -11,7 +11,7 @@ const GuidesCard = ({ guide }) => {
         />
       </figure>
       <div className="card-body items-center text-center">
-        <h2 className="card-title">{name}</h2>
+        <h2 className="card-title text-2xl">{name}</h2>
         <ReactStars
           count={rating}
           size={24}

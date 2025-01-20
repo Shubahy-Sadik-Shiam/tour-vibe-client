@@ -5,9 +5,9 @@ import GoogleLogin from "../shared/GoogleLogin";
 import Toast from "../hooks/Toast";
 import { useForm } from "react-hook-form";
 import useAuth from "../hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 const Register = () => {
-
-  const {updateUserInfo, createUser} = useAuth();
+  const { updateUserInfo, createUser } = useAuth();
 
   const {
     register,
@@ -23,9 +23,9 @@ const Register = () => {
       updateUserInfo(data.name, data.photo)
         .then(() => {
           Toast.fire({
-                  icon: "success",
-                  title: "Account created successfully",
-                });
+            icon: "success",
+            title: "Account created successfully",
+          });
 
           // save user info in the database
           // const userInfo = {
@@ -53,7 +53,6 @@ const Register = () => {
           //     navigate("/");
           //   }
           // });
-
         })
         .catch((error) => {
           Toast.fire({
@@ -66,13 +65,16 @@ const Register = () => {
 
   return (
     <div className="lg:flex lg:hero lg:h-[728px]">
+      <Helmet>
+        <title>Sign up - TourVibe</title>
+      </Helmet>
       <div className="lg:w-1/2">
         <h2 className="text-5xl font-bold text-center text-accent">
           New at TourVibe?
         </h2>
         <p className="text-center mt-2">Sign Up with Email</p>
         <form onSubmit={handleSubmit(onSubmit)} className="w-1/2 mx-auto mt-4">
-        {/* Name */}
+          {/* Name */}
           <div>
             <label className="label">
               <span className="label-text text-accent font-semibold">
@@ -89,25 +91,37 @@ const Register = () => {
                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
               </svg>
               <input
-              {...register("name")}
-              type="text" 
-              required className="grow" placeholder="Username" />
+                {...register("name")}
+                type="text"
+                required
+                className="grow"
+                placeholder="Username"
+              />
             </label>
           </div>
           {/* Photo */}
           <div>
             <label className="label">
-              <span className="label-text text-accent font-semibold">Image</span>
+              <span className="label-text text-accent font-semibold">
+                Image
+              </span>
             </label>
             <label className="input input-bordered input-accent flex items-center gap-2">
-              <input {...register("photo")} type="url"
-              required className="grow" placeholder="User Image" />
+              <input
+                {...register("photo")}
+                type="url"
+                required
+                className="grow"
+                placeholder="User Image"
+              />
             </label>
           </div>
           {/* Email */}
           <div>
             <label className="label">
-              <span className="label-text text-accent font-semibold">Email</span>
+              <span className="label-text text-accent font-semibold">
+                Email
+              </span>
             </label>
             <label className="input input-bordered input-accent flex items-center gap-2">
               <svg
@@ -119,8 +133,13 @@ const Register = () => {
                 <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
                 <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
               </svg>
-              <input {...register("email")} type="email" 
-              required className="grow" placeholder="Email" />
+              <input
+                {...register("email")}
+                type="email"
+                required
+                className="grow"
+                placeholder="Email"
+              />
             </label>
           </div>
           {/* Password */}
@@ -144,26 +163,27 @@ const Register = () => {
                 />
               </svg>
               <input
-              {...register("password", {
-                minLength: 6,
-                pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])(?=.*[0-9])/,
-              })}
-                type="password" required 
+                {...register("password", {
+                  minLength: 6,
+                  pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])(?=.*[0-9])/,
+                })}
+                type="password"
+                required
                 className="grow"
                 placeholder="Type your password here"
               />
             </label>
             {errors.password?.type === "minLength" && (
-                <span className="text-sm text-red-500">
-                  Password must be at least 6 characters
-                </span>
-              )}
-              {errors.password?.type === "pattern" && (
-                <span className="text-sm text-red-500">
-                  Password must have at least one uppercase, one lowercase, one
-                  number and one special character!
-                </span>
-              )}
+              <span className="text-sm text-red-500">
+                Password must be at least 6 characters
+              </span>
+            )}
+            {errors.password?.type === "pattern" && (
+              <span className="text-sm text-red-500">
+                Password must have at least one uppercase, one lowercase, one
+                number and one special character!
+              </span>
+            )}
           </div>
           <button
             type="submit"
