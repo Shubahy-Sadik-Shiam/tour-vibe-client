@@ -6,13 +6,14 @@ import Toast from "../hooks/Toast";
 import { useForm } from "react-hook-form";
 import useAuth from "../hooks/useAuth";
 import { Helmet } from "react-helmet-async";
+import useAxiosPublic from "../hooks/useAxiosPublic";
 const Register = () => {
   const { updateUserInfo, createUser } = useAuth();
+  const axiosPublic= useAxiosPublic();
 
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm();
 
@@ -28,31 +29,21 @@ const Register = () => {
           });
 
           // save user info in the database
-          // const userInfo = {
-          //   name: data.name,
-          //   email: data.email,
-          // };
-          // axiosPublic.post("/users", userInfo).then((res) => {
-          //   if (res.data.insertedId) {
-          //     reset();
-          //     const Toast = Swal.mixin({
-          //       toast: true,
-          //       position: "top-end",
-          //       showConfirmButton: false,
-          //       timer: 2000,
-          //       timerProgressBar: true,
-          //       didOpen: (toast) => {
-          //         toast.onmouseenter = Swal.stopTimer;
-          //         toast.onmouseleave = Swal.resumeTimer;
-          //       },
-          //     });
-          //     Toast.fire({
-          //       icon: "success",
-          //       title: "Account created successfully",
-          //     });
-          //     navigate("/");
-          //   }
-          // });
+          const userInfo = {
+            name: data.name,
+            email: data.email,
+            photo: data.photo,
+            role: "tourist"
+          };
+          axiosPublic.post("/users", userInfo).then((res) => {
+            if (res.data.insertedId) {
+              Toast.fire({
+                icon: "success",
+                title: "Account created successfully",
+              });
+              navigate("/");
+            }
+          });
         })
         .catch((error) => {
           Toast.fire({

@@ -31,24 +31,25 @@ const Navbar = () => {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Log out"
+      confirmButtonText: "Log out",
     }).then((result) => {
       if (result.isConfirmed) {
-        logOut()
-        .then(res=>{
+        logOut().then((res) => {
           Toast.fire({
             icon: "success",
-            title: "See you again soon!"
+            title: "See you again soon!",
           });
-        })
+        });
       }
     });
-  }
+  };
   return (
     <div>
-      <div className={`navbar w-10/12 fixed z-10 lg:left-32 md:left-16 left-9 text-white py-4 border-b ${
-        isNotHomePage ? "bg-blue-500" : "bg-transparent"
-      }`}>
+      <div
+        className={`navbar w-10/12 fixed z-10 lg:left-32 md:left-16 left-9 text-white py-4 border-b ${
+          isNotHomePage ? "bg-blue-500" : "bg-transparent"
+        }`}
+      >
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -98,18 +99,17 @@ const Navbar = () => {
                 </div>
                 <ul
                   tabIndex={0}
-                  className="dropdown-content  bg-white bg-opacity-20 backdrop-blur-lg rounded-box z-[1] w-52 p-2 shadow"
+                  className="dropdown-content  bg-black bg-opacity-20 backdrop-blur-lg rounded-box z-[1] w-52 p-2 shadow"
                 >
                   <div className="flex flex-col items-center">
-                  <img
-                    className="w-20 h-20 my-2 rounded-full object-cover"
-                    src={user?.photoURL}
-                    alt=""
-                  />
-                  <p className="text-lg font-bold">{user?.displayName}</p>
-                  <p className="">{user?.email}</p>
+                    <img
+                      className="w-20 h-20 my-2 rounded-full object-cover"
+                      src={user?.photoURL}
+                      alt=""
+                    />
+                    <p className="text-lg font-bold">{user?.displayName}</p>
+                    <p className="">{user?.email}</p>
                   </div>
-
                   <li className="btn btn-block btn-xs my-2">
                     <a onClick={handleLogOut}>Log out</a>
                   </li>

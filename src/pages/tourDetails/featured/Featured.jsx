@@ -3,7 +3,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { FreeMode, Navigation, Thumbs, Autoplay } from "swiper/modules";
 import { useState } from "react";
 import "../featured/featured.css";
 
@@ -22,8 +22,12 @@ const Featured = ({ trip }) => {
         loop={true}
         spaceBetween={10}
         navigation={true}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
         thumbs={{ swiper: thumbsSwiper }}
-        modules={[FreeMode, Navigation, Thumbs]}
+        modules={[FreeMode, Navigation, Thumbs, Autoplay]}
         className="mySwiper2"
       >
         {images.map((image) => (
@@ -40,8 +44,12 @@ const Featured = ({ trip }) => {
           spaceBetween={10}
           slidesPerView={4}
           freeMode={true}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
           watchSlidesProgress={true}
-          modules={[FreeMode, Navigation, Thumbs]}
+          modules={[FreeMode, Navigation, Thumbs, Autoplay]}
           className="mySwiper"
         >
           {images.map((image) => (

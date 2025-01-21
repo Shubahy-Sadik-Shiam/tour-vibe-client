@@ -1,9 +1,11 @@
 import { FcGoogle } from "react-icons/fc";
 import useAuth from "../hooks/useAuth";
 import Toast from "../hooks/Toast";
+import useAxiosPublic from "../hooks/useAxiosPublic";
 
 const GoogleLogin = () => {
   const { googleLogin } = useAuth();
+  const axiosPublic = useAxiosPublic();
 
   const handleGoogleLogin = () => [
     googleLogin()
