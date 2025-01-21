@@ -1,6 +1,6 @@
 import img from "../assets/register.webp";
 import { FaFacebook, FaGithub } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import GoogleLogin from "../shared/GoogleLogin";
 import Toast from "../hooks/Toast";
 import { useForm } from "react-hook-form";
@@ -10,6 +10,7 @@ import useAxiosPublic from "../hooks/useAxiosPublic";
 const Register = () => {
   const { updateUserInfo, createUser } = useAuth();
   const axiosPublic= useAxiosPublic();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -19,15 +20,8 @@ const Register = () => {
 
   const onSubmit = (data) => {
     createUser(data.email, data.password).then((result) => {
-      const loggedUser = result.user;
-      console.log(loggedUser);
       updateUserInfo(data.name, data.photo)
         .then(() => {
-          Toast.fire({
-            icon: "success",
-            title: "Account created successfully",
-          });
-
           // save user info in the database
           const userInfo = {
             name: data.name,
@@ -36,6 +30,7 @@ const Register = () => {
             role: "tourist"
           };
           axiosPublic.post("/users", userInfo).then((res) => {
+            console.log(res.data);
             if (res.data.insertedId) {
               Toast.fire({
                 icon: "success",

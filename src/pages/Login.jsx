@@ -1,7 +1,7 @@
 import { FcGoogle } from "react-icons/fc";
 import img from "../assets/login.webp";
 import { FaFacebook, FaGithub } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import GoogleLogin from "../shared/GoogleLogin";
 import useAuth from "../hooks/useAuth";
 import Toast from "../hooks/Toast";
@@ -10,6 +10,8 @@ import { Helmet } from "react-helmet-async";
 const Login = () => {
   const { loginUser } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -18,12 +20,11 @@ const Login = () => {
     const password = form.password.value;
     loginUser(email, password)
       .then((result) => {
-        console.log(result.user);
         Toast.fire({
           icon: "success",
           title: "Signed in successfully",
         });
-        // navigate(from, { replace: true });
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);

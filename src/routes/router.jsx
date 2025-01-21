@@ -8,6 +8,9 @@ import GuideProfile from "../pages/GuideProfile";
 import AboutUs from "../pages/AboutUs";
 import AllTours from "../pages/AllTours";
 import Community from "../pages/Community";
+import Dashboard from "../layout/Dashboard";
+import ManageProfile from "../pages/Dashboard/ManageProfile";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +54,21 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register></Register>,
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
+    children: [
+      // admin routes
+      {
+        path: "manageProfile",
+        element: <ManageProfile></ManageProfile>,
+      },
+    ],
   },
 ]);
 export default router;

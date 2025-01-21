@@ -114,7 +114,7 @@ const Navbar = () => {
                     <a onClick={handleLogOut}>Log out</a>
                   </li>
                   <li className="btn btn-block btn-xs mb-2">
-                    <a>Dashboard</a>
+                    <Link to="/dashboard/manageProfile">Dashboard</Link>
                   </li>
                 </ul>
               </div>
