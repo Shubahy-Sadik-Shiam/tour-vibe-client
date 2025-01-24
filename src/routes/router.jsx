@@ -11,6 +11,9 @@ import Community from "../pages/Community";
 import Dashboard from "../layout/Dashboard";
 import ManageProfile from "../pages/Dashboard/ManageProfile";
 import PrivateRoute from "./PrivateRoute";
+import MyBookings from "../pages/Dashboard/MyBookings";
+import AddStories from "../pages/Dashboard/AddStories";
+import ManageStory from "../pages/Dashboard/ManageStory";
 
 const router = createBrowserRouter([
   {
@@ -63,10 +66,22 @@ const router = createBrowserRouter([
       </PrivateRoute>
     ),
     children: [
-      // admin routes
+      // tourist routes
       {
         path: "manageProfile",
         element: <ManageProfile></ManageProfile>,
+      },
+      {
+        path: "myBookings",
+        element: <MyBookings></MyBookings>,
+      },
+      {
+        path: "addStories",
+        element: <AddStories></AddStories>,
+      },
+      {
+        path: "manageStories",
+        element: <ManageStory></ManageStory>,
       },
     ],
   },

@@ -57,7 +57,7 @@ const BookingForm = ({ trip }) => {
               title: "Your booking is confirmed!",
               icon: "success",
               html: `
-              <a href="/myBookings" autofocus>My Bookings</a>
+              <a href="/dashboard/myBookings" autofocus>My Bookings</a>
             `,
               showCloseButton: true,
               focusConfirm: false,

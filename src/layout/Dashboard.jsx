@@ -6,11 +6,33 @@ import useAuth from "../hooks/useAuth";
 import useAdmin from "../hooks/useAdmin";
 import useGuide from "../hooks/useGuide";
 import { Helmet } from "react-helmet-async";
+import Toast from "../hooks/Toast";
+import Swal from "sweetalert2";
 
 const Dashboard = () => {
   const { user, logOut } = useAuth();
   const [isAdmin] = useAdmin();
   const [isGuide] = useGuide();
+
+  const handleLogOut = () => {
+    Swal.fire({
+      title: "Are you sure you want to logout?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Log out",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        logOut().then((res) => {
+          Toast.fire({
+            icon: "success",
+            title: "See you again soon!",
+          });
+        });
+      }
+    });
+  };
   return (
     <div>
       <Helmet>
@@ -33,7 +55,7 @@ const Dashboard = () => {
                 <IoMdHome className="text-2xl" /> Home
               </button>
             </Link>
-            <button onClick={logOut} className="btn btn-outline text-white btn-block mt-4">
+            <button onClick={handleLogOut} className="btn btn-outline text-white btn-block mt-4">
               Log out
             </button>
           </div>

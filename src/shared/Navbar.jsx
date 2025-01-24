@@ -46,8 +46,8 @@ const Navbar = () => {
   return (
     <div>
       <div
-        className={`navbar w-10/12 fixed z-10 lg:left-32 md:left-16 left-9 text-white py-4 border-b ${
-          isNotHomePage ? "bg-blue-500" : "bg-transparent"
+        className={`navbar w-10/12 fixed z-10 lg:left-32 md:left-16 left-9 text-white p-4  ${
+          isNotHomePage ? "bg-gradient-to-l from-teal-300 via-teal-400 to-teal-500" : "bg-transparent"
         }`}
       >
         <div className="navbar-start">
