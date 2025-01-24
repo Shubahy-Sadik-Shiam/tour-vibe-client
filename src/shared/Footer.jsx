@@ -1,14 +1,14 @@
 import logo from "../assets/logo.png";
 const Footer = () => {
   return (
-    <footer className="footer footer-center bg-base-200 text-base-content rounded p-10">
+    <footer className="footer footer-center bg-gradient-to-l from-teal-500 via-teal-400 to-teal-200 text-base-content rounded p-10">
       <nav className="grid grid-flow-col gap-4">
         <a className="link link-hover">About us</a>
         <a className="link link-hover">Contact</a>
         <a className="link link-hover">Jobs</a>
         <a className="link link-hover">Press kit</a>
       </nav>
-      <nav className="flex md:gap-10 gap-5">
+      <nav className="md:flex md:gap-10 gap-5">
         <div className="grid grid-flow-col gap-4">
           <a>
             <svg
