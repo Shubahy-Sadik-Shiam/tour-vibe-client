@@ -13,7 +13,7 @@ const OurPackages = () => {
   });
 
   return (
-    <div className="my-10">
+    <div className="py-10">
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
         {packages.map((item) => (
           <TourCard key={item._id} item={item}></TourCard>

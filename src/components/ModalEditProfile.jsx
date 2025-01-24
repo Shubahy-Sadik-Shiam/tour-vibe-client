@@ -1,23 +1,33 @@
-const ModalEditProfile = ({userInfo}) => {
+import Toast from "../hooks/Toast";
+import useAuth from "../hooks/useAuth";
+import useAxiosSecure from "../hooks/useAxiosSecure";
+
+const ModalEditProfile = ({userInfo, refetch}) => {
+  const {updateUserInfo, user} = useAuth();
+  const axiosSecure = useAxiosSecure();
 
     const handleUpdate = e => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
         const photo = form.photo.value;
-        const email = form.email.value;
-        const role = form.role.value;
-        console.log(name, photo, email, role);
+        const updateInfo = {name, photo};
+
+        updateUserInfo(name, photo).then(res=>{
+          axiosSecure.patch(`/users/${user?.email}`, updateInfo)
+          .then(res=>{
+            if(res.data.modifiedCount){
+              refetch();
+              Toast.fire({
+                icon: "success",
+                title: "Your profile is updated",
+              });
+            }
+          })
+        })
     }
   return (
     <div>
-      {/* Open the modal using document.getElementById('ID').showModal() method */}
-      {/* <button
-        className="btn"
-        onClick={() => document.getElementById("my_modal_5").showModal()}
-      >
-        open modal
-      </button> */}
       <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
           <form method="dialog">

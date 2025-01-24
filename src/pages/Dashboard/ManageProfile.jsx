@@ -7,11 +7,10 @@ import ModalEditProfile from "../../components/ModalEditProfile";
 const ManageProfile = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
-  const { data: userInfo = {} } = useQuery({
+  const { data: userInfo = {}, refetch } = useQuery({
     queryKey: ["userInfo", user?.email],
     queryFn: async () => {
       const res = await axiosSecure.get(`/users/${user?.email}`);
-      console.log(res.data);
       return res.data;
     },
   });
@@ -47,7 +46,9 @@ const ManageProfile = () => {
           Apply For Tour Guide
         </button>
       </div>
-      <ModalEditProfile userInfo={userInfo}></ModalEditProfile>
+      <ModalEditProfile
+       userInfo={userInfo}
+       refetch={refetch}></ModalEditProfile>
     </div>
   );
 };

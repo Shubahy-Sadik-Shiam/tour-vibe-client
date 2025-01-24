@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import TourCard from "../components/TourCard";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const AllTours = () => {
   const axiosPublic = useAxiosPublic();
