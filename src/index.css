@@ -5,4 +5,5 @@
 a.active{
     background-color: teal !important;
     color: white !important;
+    font-weight: 700;
 }

@@ -14,7 +14,7 @@ const MeetGuides = () => {
     });
     return (
         <div>
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 my-10">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 py-10">
                 {
                     guides.map(guide=><GuidesCard key={guide._id} guide={guide}></GuidesCard>)
                 }

@@ -4,6 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Toast from "../../hooks/Toast";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
@@ -14,6 +15,7 @@ const AddStories = () => {
   const axiosPublic = useAxiosPublic();
   const axiosSecure = useAxiosSecure();
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     // upload image to imgbb and then get an url
@@ -48,7 +50,7 @@ const AddStories = () => {
     const response = await axiosSecure.post("/stories", storyInfo);
     if (response.data.insertedId) {
       setLoading(false);
-      reset();
+      navigate("/dashboard/manageStories")
       Toast.fire({
         icon: "success",
         title: "Story added successful",

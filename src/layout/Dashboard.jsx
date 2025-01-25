@@ -39,7 +39,7 @@ const Dashboard = () => {
         <title>Dashboard - TourVibe</title>
       </Helmet>
       <div className="flex">
-        <div className="w-1/5 bg-accent">
+        <div className="w-1/5 bg-accent min-h-screen fixed">
           <div className="md:flex px-2 items-center justify-center mt-6 text-white">
             <div className="max-sm:hidden">
               <h2 className="lg:text-3xl font-bold">TourVibe</h2>
@@ -60,7 +60,7 @@ const Dashboard = () => {
             </button>
           </div>
 
-          <ul className="menu space-y-3 mt-5 ">
+          <ul className="menu font-semibold space-y-3 mt-5 ">
             {!isAdmin && !isGuide && user && (
               <>
                 <li>
@@ -130,8 +130,8 @@ const Dashboard = () => {
             )}
           </ul>
         </div>
-        <div className="flex-1">
-          <div className="min-h-[450px]">
+        <div className="flex-1 ml-[20%]">
+          <div className="min-h-[459px]">
             <Outlet></Outlet>
           </div>
           <Footer></Footer>
