@@ -22,7 +22,7 @@ const GoogleLogin = () => {
           role: "tourist"
         };
         axiosPublic.post("/users", userInfo).then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
           if (res.data.insertedId) {
             Toast.fire({
               icon: "success",
@@ -32,7 +32,7 @@ const GoogleLogin = () => {
         });
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         Toast.fire({
           icon: "error",
           title: "Login failed!",

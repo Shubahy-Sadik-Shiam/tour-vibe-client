@@ -5,7 +5,7 @@ import useAxiosSecure from "./useAxiosSecure";
 const useGuide = () => {
   const { user, loading } = useAuth();
   const axiosSecure = useAxiosSecure();
-  const { data: isGuide } = useQuery({
+  const { data: isGuide, isLoading } = useQuery({
     queryKey: ["isGuide", user?.email],
     enabled: !loading,
     queryFn: async () => {
@@ -13,7 +13,7 @@ const useGuide = () => {
       return res.data?.guide;
     },
   });
-  return [isGuide];
+  return [isGuide, isLoading];
 };
 
 export default useGuide;

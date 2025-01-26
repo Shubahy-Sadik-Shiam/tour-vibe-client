@@ -14,6 +14,8 @@ import PrivateRoute from "./PrivateRoute";
 import MyBookings from "../pages/Dashboard/MyBookings";
 import AddStories from "../pages/Dashboard/AddStories";
 import ManageStory from "../pages/Dashboard/ManageStory";
+import JoinAsGuide from "../pages/Dashboard/JoinAsGuide";
+import EditStory from "../pages/Dashboard/EditStory";
 
 const router = createBrowserRouter([
   {
@@ -82,6 +84,14 @@ const router = createBrowserRouter([
       {
         path: "manageStories",
         element: <ManageStory></ManageStory>,
+      },
+      {
+        path: "joinAsGuide",
+        element: <JoinAsGuide></JoinAsGuide>,
+      },
+      {
+        path: "editStory/:id",
+        element: <EditStory></EditStory>,
       },
     ],
   },

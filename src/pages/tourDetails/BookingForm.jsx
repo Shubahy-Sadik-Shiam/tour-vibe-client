@@ -51,7 +51,7 @@ const BookingForm = ({ trip }) => {
       axiosSecure
         .post("/bookings", initialData)
         .then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
           if (res.data.insertedId) {
             Swal.fire({
               title: "Your booking is confirmed!",

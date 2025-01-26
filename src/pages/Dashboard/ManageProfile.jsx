@@ -3,9 +3,14 @@ import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { FaUserEdit } from "react-icons/fa";
 import ModalEditProfile from "../../components/ModalEditProfile";
+import { Link } from "react-router-dom";
+import useGuide from "../../hooks/useGuide";
+import useAdmin from "../../hooks/useAdmin";
 
 const ManageProfile = () => {
   const { user } = useAuth();
+  const [isGuide] = useGuide();
+  const [isAdmin] = useAdmin();
   const axiosSecure = useAxiosSecure();
   const { data: userInfo = {}, refetch } = useQuery({
     queryKey: ["userInfo", user?.email],
@@ -42,13 +47,18 @@ const ManageProfile = () => {
       </div>
       <div className="bg-accent min-h-64 -mt-60 rounded-b-lg"></div>
       <div className=" flex justify-center">
-        <button className="btn btn-accent mt-3 text-white w-64">
-          Apply For Tour Guide
-        </button>
+        {user && !isAdmin && !isGuide && (
+          <Link to="/dashboard/joinAsGuide">
+            <button className="btn btn-accent mt-3 text-white w-64">
+              Apply For Tour Guide
+            </button>
+          </Link>
+        )}
       </div>
       <ModalEditProfile
-       userInfo={userInfo}
-       refetch={refetch}></ModalEditProfile>
+        userInfo={userInfo}
+        refetch={refetch}
+      ></ModalEditProfile>
     </div>
   );
 };

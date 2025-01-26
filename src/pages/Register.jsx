@@ -30,7 +30,7 @@ const Register = () => {
             role: "tourist"
           };
           axiosPublic.post("/users", userInfo).then((res) => {
-            console.log(res.data);
+            // console.log(res.data);
             if (res.data.insertedId) {
               Toast.fire({
                 icon: "success",

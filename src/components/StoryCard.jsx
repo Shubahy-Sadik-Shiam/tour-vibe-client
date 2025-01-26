@@ -2,6 +2,7 @@ import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 const StoryCard = ({ story, refetch }) => {
   const axiosSecure = useAxiosSecure();
@@ -46,10 +47,10 @@ const StoryCard = ({ story, refetch }) => {
         <h2 className="card-title">{story.title}</h2>
         <p>{story.story}</p>
         <div className="card-actions mt-4">
-          <button className="btn btn-accent text-white">
+          <Link to={`/dashboard/editStory/${story._id}`}><button className="btn btn-accent text-white">
             Edit Story
             <FaEdit className="text-xl" />
-          </button>
+          </button></Link>
           <button
             onClick={() => handleDeleteStory(story._id)}
             className="btn btn-error text-white"

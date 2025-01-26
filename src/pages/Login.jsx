@@ -27,7 +27,7 @@ const Login = () => {
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         Toast.fire({
           icon: "error",
           title: "Oppss! Login failed! Please try again.",
