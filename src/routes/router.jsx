@@ -97,7 +97,7 @@ const router = createBrowserRouter([
         element: <EditStory></EditStory>,
       },
       {
-        path: "payment/:package",
+        path: "payment/:id",
         element: <Payment></Payment>,
       },
       // Guide routes

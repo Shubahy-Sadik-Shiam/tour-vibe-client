@@ -5,7 +5,6 @@ import { MdCancel } from "react-icons/md";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
-
 const MyBookings = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
@@ -44,7 +43,9 @@ const MyBookings = () => {
   };
   return (
     <div>
-      <h2 className="text-4xl font-bold text-center my-10 bg-gradient-to-r from-black to-teal-400 bg-clip-text text-transparent">My Upcoming Tours</h2>
+      <h2 className="text-4xl font-bold text-center my-10 bg-gradient-to-r from-black to-teal-400 bg-clip-text text-transparent">
+        My Upcoming Tours
+      </h2>
 
       <div className="w-10/12 mx-auto my-10">
         <div className="overflow-x-auto">
@@ -72,16 +73,24 @@ const MyBookings = () => {
                   <td>BDT {item.price}</td>
                   <td>{item.status}</td>
                   <td>
-                    <Link to={`/dashboard/payment/${item._id}`}>
-                    <button className="btn btn-accent btn-sm text-white">Pay</button>
-                    </Link>
+                    {item.status === "pending" && (
+                      <Link to={`/dashboard/payment/${item._id}`}>
+                        <button className="btn btn-accent btn-sm text-white">
+                          Pay
+                        </button>
+                      </Link>
+                    )}
                   </td>
                   <td>
-                    {
-                        item.status === "pending" && <button onClick={()=>handleCancelBooking(item)} className="btn btn-circle btn-sm "><MdCancel className="text-2xl text-red-500"/>
-                    </button>
-                    }
-                    </td>
+                    {item.status === "pending" && (
+                      <button
+                        onClick={() => handleCancelBooking(item)}
+                        className="btn btn-circle btn-sm "
+                      >
+                        <MdCancel className="text-2xl text-red-500" />
+                      </button>
+                    )}
+                  </td>
                 </tr>
               ))}
             </tbody>

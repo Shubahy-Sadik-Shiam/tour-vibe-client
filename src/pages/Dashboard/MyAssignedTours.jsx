@@ -2,37 +2,56 @@ import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import Toast from "../../hooks/Toast";
 
 const MyAssignedTours = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
-  const { data: assignedTours = [] } = useQuery({
+  const { data: assignedTours = [], refetch } = useQuery({
     queryKey: ["assignedTours", user?.displayName],
     queryFn: async () => {
       const res = await axiosSecure.get(`/myAssignedTours/${user.displayName}`);
-      console.log(res.data);
       return res.data;
     },
   });
 
-  const handleReject = (item) => {
-    Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
-      }).then((result) => {
-        if (result.isConfirmed) {
-        //   Swal.fire({
-        //     title: "Deleted!",
-        //     text: "Your file has been deleted.",
-        //     icon: "success"
-        //   });
+  const handleAccept = (item) => {
+    axiosSecure
+      .patch(`/status/${item._id}`, { status: "accepted" })
+      .then((res) => {
+        if (res.data.modifiedCount > 0) {
+          Toast.fire({
+            icon: "success",
+            title: "Tour has been accepted successfully",
+          });
+          refetch();
         }
       });
+  };
+  const handleReject = (item) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure
+          .patch(`/status/${item._id}`, { status: "rejected" })
+          .then((res) => {
+            if (res.data.modifiedCount > 0) {
+              Toast.fire({
+                icon: "success",
+                title: "Tour has been rejected",
+              });
+              refetch();
+            }
+          });
+      }
+    });
   };
   return (
     <div>
@@ -65,7 +84,11 @@ const MyAssignedTours = () => {
                   <td>BDT {item.price}</td>
                   <td>{item.status}</td>
                   <td>
-                    <button disabled={item.status == "pending"} className="btn btn-accent btn-sm text-white">
+                    <button
+                      onClick={() => handleAccept(item)}
+                      disabled={item.status !== "in review"}
+                      className="btn btn-accent btn-sm text-white"
+                    >
                       Accept
                     </button>
                   </td>

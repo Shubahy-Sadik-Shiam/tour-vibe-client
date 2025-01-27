@@ -1,18 +1,42 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useAuth from "../../hooks/useAuth";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
 
 const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
   const [error, setError] = useState("");
+  const [confirmError, setConfirmError] = useState("");
   const [clientSecret, setClientSecret] = useState("");
   const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
   const navigate = useNavigate();
+  const axiosPublic = useAxiosPublic();
+  const { id } = useParams();
+
+  const { data: booking = {} } = useQuery({
+    queryKey: ["booking"],
+    queryFn: async () => {
+      const res = await axiosPublic.get(`/booking/${id}`);
+      return res.data;
+    },
+  });
+  const price = booking.price;
+
+  useEffect(() => {
+    if (price > 0) {
+      axiosSecure
+        .post("/create-payment-intent", { price: price })
+        .then((res) => {
+          setClientSecret(res.data.clientSecret);
+        });
+    }
+  }, [axiosSecure, price]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -41,55 +65,63 @@ const CheckoutForm = () => {
     }
 
     // confirm payment------>
-    // const { paymentIntent, error: confirmError } =
-    //   await stripe.confirmCardPayment(clientSecret, {
-    //     payment_method: {
-    //       card: card,
-    //       billing_details: {
-    //         email: user?.email || "Anonymous",
-    //         name: user?.name || "Anonymous",
-    //       },
-    //     },
-    //   });
+    const { paymentIntent, error: confirmError } =
+      await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: card,
+          billing_details: {
+            email: user?.email || "Anonymous",
+            name: user?.displayName || "Anonymous",
+          },
+        },
+      });
 
-    // if (confirmError) {
-    //   console.log("confirm error", confirmError);
-    // } else {
-    //   console.log("payment intent", paymentIntent);
-    //   if (paymentIntent.status === "succeeded") {
-    //     setTransactionId(paymentIntent.id);
-
+    if (confirmError) {
+      console.log("confirm error", confirmError);
+      setConfirmError(confirmError.message);
+    } else {
+      console.log("payment intent", paymentIntent);
+      setConfirmError("");
+      if (paymentIntent.status === "succeeded") {
         // now save the payment info in the database
-        // const paymentInfo = {
-        //   email: user.email,
-        //   price: totalPrice,
-        //   transactionId: paymentIntent.id,
-        //   date: new Date(),
-        //   cartIds: cart.map((item) => item._id),
-        //   menuItemIds: cart.map((item) => item.menuId),
-        //   status: "pending",
-        // };
+        const paymentInfo = {
+          email: user.email,
+          price: price,
+          transactionId: paymentIntent.id,
+          date: new Date(),
+          //   cartIds: cart.map((item) => item._id),
+          //   menuItemIds: cart.map((item) => item.menuId),
+          //   status: "pending",
+        };
 
-        // const res = await axiosSecure.post("/payments", paymentInfo);
-        // console.log("payment info saved", res.data);
-        // refetch();
-        // if (res.data?.paymentResult?.insertedId) {
-        //   Swal.fire({
-        //     position: "center",
-        //     icon: "success",
-        //     title: "Payment Successful",
-        //     text: `Your Transaction Id: ${paymentIntent?.id}`,
-        //     showConfirmButton: true,
-        //   });
-        //   navigate("/dashboard/myBookings");
-        // }
-    //   }
-    // }
+        const res = await axiosSecure.post("/payments", paymentInfo);
+        if (res.data.insertedId) {
+          axiosSecure
+            .patch(`/status/${booking._id}`, { status: "in review" })
+            .then((response) => {
+              if (response.data.modifiedCount > 0) {
+                Swal.fire({
+                  position: "center",
+                  icon: "success",
+                  title: "Payment Successful",
+                  text: `Your Transaction Id: ${paymentIntent?.id}`,
+                  showConfirmButton: true,
+                });
+                navigate("/dashboard/myBookings");
+              }
+            });
+        }
+      }
+    }
   };
 
   return (
-    <form className="lg:w-1/2 md:w-11/12 w-11/12  bg-teal-500 rounded-xl mt-20 p-20 mx-auto" onSubmit={handleSubmit}>
-      <CardElement className="border-2 p-4 bg-white rounded-xl"
+    <form
+      className="lg:w-1/2 md:w-11/12 w-11/12  bg-teal-500 rounded-xl mt-20 p-20 mx-auto"
+      onSubmit={handleSubmit}
+    >
+      <CardElement
+        className="border-2 p-4 bg-white rounded-xl"
         options={{
           style: {
             base: {
@@ -106,10 +138,11 @@ const CheckoutForm = () => {
         }}
       />
       <p className="text-sm font-semibold text-red-500">{error}</p>
+      <p className="text-sm font-semibold text-red-500">{confirmError}</p>
       <button
         className="btn btn-outline text-white btn-block mt-4"
         type="submit"
-        // disabled={!stripe || !clientSecret}
+        disabled={!stripe || !clientSecret}
       >
         Pay
       </button>
