@@ -10,7 +10,7 @@ const TourismTravelGuide = () => {
   const [tabIndex, setTabIndex] = useState(0);
   return (
     <div>
-      <p className="text-4xl font-bold text-center my-10">
+      <p className="text-4xl font-bold text-center my-10 bg-gradient-to-r from-black to-teal-400 bg-clip-text text-transparent">
         From Experts to Experiences: Your <br /> Journey Starts Here
       </p>
       <div className="w-10/12 mx-auto">

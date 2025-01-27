@@ -24,7 +24,7 @@ const AllTours = () => {
   }
   return (
     <div className="w-10/12 mx-auto pt-36 pb-10">
-      <h2 className="text-center text-4xl font-bold">
+      <h2 className="bg-gradient-to-r from-black to-teal-400 bg-clip-text text-transparent text-center text-4xl font-bold">
         From Dream Destinations to Hidden Gems: <br />
         Discover Our Exclusive Tour Packages
       </h2>

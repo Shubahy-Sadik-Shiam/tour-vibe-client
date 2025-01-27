@@ -20,7 +20,7 @@ const GuidesCard = ({ guide }) => {
         />
         <p>{location}</p>
         <div className="card-actions">
-          <Link to={`/guideProfile/${_id}`}><button className="btn btn-primary mt-2">View Details</button></Link>
+          <Link to={`/guideProfile/${_id}`}><button className="btn btn-accent text-white mt-2">View Details</button></Link>
         </div>
       </div>
     </div>

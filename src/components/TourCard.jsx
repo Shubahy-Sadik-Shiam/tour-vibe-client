@@ -18,7 +18,7 @@ const TourCard = ({ item }) => {
        <p><span className="text-gray-600">Price:</span> <span className="font-bold text-2xl text-yellow-500">{price}</span>/ person</p>
        </div>
         <div className="card-actions">
-          <Link to={`/tourDetails/${_id}`}><button className="btn btn-primary">View Details</button></Link>
+          <Link to={`/tourDetails/${_id}`}><button className="btn btn-accent text-white">View Details</button></Link>
         </div>
       </div>
     </div>

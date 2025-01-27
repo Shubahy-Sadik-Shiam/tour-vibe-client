@@ -28,7 +28,7 @@ const TourDetails = () => {
         <title>Tour-Details - TourVibe</title>
       </Helmet>
       <Featured trip={trip}></Featured>
-      <h2 className="text-4xl text-center font-bold my-2">{tripTitle}</h2>
+      <h2 className="text-4xl text-center font-bold my-2 bg-gradient-to-r from-black to-teal-400 bg-clip-text text-transparent">{tripTitle}</h2>
       <div className="lg:flex my-10 gap-10">
         {/* package details */}
         <div className="lg:w-1/2">
@@ -70,7 +70,7 @@ const TourDetails = () => {
           </div>
         </div>
       </div>
-      <h2 className="text-4xl font-bold text-center mt-20 mb-10">Your Trusted Companions for an <br /> Unforgettable Adventure</h2>
+      <h2 className="text-4xl font-bold text-center mt-20 mb-10 bg-gradient-to-r from-black to-teal-400 bg-clip-text text-transparent">Your Trusted Companions for an <br /> Unforgettable Adventure</h2>
       <AllGuides></AllGuides>
       <BookingForm trip={trip}></BookingForm>
     </div>

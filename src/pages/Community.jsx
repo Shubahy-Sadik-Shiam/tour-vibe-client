@@ -14,7 +14,7 @@ const Community = () => {
     });
     return (
         <div className="w-10/12 mx-auto pt-40">
-           <h2 className="text-4xl font-bold text-center pb-10">Echoes of the Road: Stories from <br /> the Heart of Travel</h2>
+           <h2 className="bg-gradient-to-r from-black to-teal-400 bg-clip-text text-transparent text-4xl font-bold text-center pb-10">Echoes of the Road: Stories from <br /> the Heart of Travel</h2>
            <div className="space-y-10 pb-10">
            {
             allStories.map(story=><Stories key={story._id} story={story}></Stories>)

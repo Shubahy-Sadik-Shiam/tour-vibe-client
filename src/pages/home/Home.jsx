@@ -3,6 +3,8 @@ import Banner from "./banner/Banner";
 import Overview from "./Overview";
 import TourismTravelGuide from "./TourismTravelGuide";
 import TouristStory from "./TouristStory";
+import TopDestinations from "./TopDestinations";
+import Stats from "./Stats";
 const Home = () => {
     return (
         <div>
@@ -13,6 +15,8 @@ const Home = () => {
             <Overview></Overview>
             <TourismTravelGuide></TourismTravelGuide>
             <TouristStory></TouristStory>
+            <TopDestinations></TopDestinations>
+            <Stats></Stats>
         </div>
     );
 };

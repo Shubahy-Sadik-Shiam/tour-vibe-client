@@ -15,7 +15,7 @@ const TouristStory = () => {
   });
   return (
     <div className="w-10/12 mx-auto">
-      <h2 className="text-4xl font-bold text-center mt-20 mb-5">
+      <h2 className="text-4xl bg-gradient-to-r from-black to-teal-400 bg-clip-text text-transparent font-bold text-center mt-20 mb-5">
         Journey Chronicles: Stories That Inspire <br /> Your Next Adventure
       </h2>
       <div className="space-y-10 py-10">

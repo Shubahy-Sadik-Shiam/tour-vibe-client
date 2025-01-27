@@ -76,7 +76,7 @@ const BookingForm = ({ trip }) => {
 
   return (
     <div className="pb-10">
-      <h2 className="text-4xl mb-10 font-bold text-center">
+      <h2 className="text-4xl bg-gradient-to-r from-black to-teal-400 bg-clip-text text-transparent mb-10 font-bold text-center">
         Book Your Dream Trip Now
       </h2>
       <div
