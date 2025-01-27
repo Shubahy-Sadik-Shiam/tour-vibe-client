@@ -57,10 +57,10 @@ const CheckoutForm = () => {
     });
 
     if (error) {
-      console.log("payment error", error);
+    //   console.log("payment error", error);
       setError(error.message);
     } else {
-      console.log("payment method", paymentMethod);
+    //   console.log("payment method", paymentMethod);
       setError("");
     }
 
@@ -77,10 +77,10 @@ const CheckoutForm = () => {
       });
 
     if (confirmError) {
-      console.log("confirm error", confirmError);
+    //   console.log("confirm error", confirmError);
       setConfirmError(confirmError.message);
     } else {
-      console.log("payment intent", paymentIntent);
+    //   console.log("payment intent", paymentIntent);
       setConfirmError("");
       if (paymentIntent.status === "succeeded") {
         // now save the payment info in the database

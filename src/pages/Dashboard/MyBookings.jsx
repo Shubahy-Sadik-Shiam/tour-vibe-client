@@ -29,7 +29,7 @@ const MyBookings = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         const res = await axiosSecure.delete(`/bookings/${item._id}`);
-        console.log(res.data);
+        // console.log(res.data);
         if (res.data.deletedCount > 0) {
           Swal.fire({
             title: "Deleted!",
@@ -65,7 +65,7 @@ const MyBookings = () => {
             </thead>
             <tbody>
               {bookings.map((item, index) => (
-                <tr key={item._id} className="bg-base-200">
+                <tr key={item._id} className="bg-teal-100">
                   <th>{index + 1}</th>
                   <td>{item.packageName}</td>
                   <td>{item.guide}</td>

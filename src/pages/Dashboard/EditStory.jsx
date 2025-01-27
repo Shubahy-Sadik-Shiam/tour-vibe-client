@@ -57,7 +57,7 @@ const EditStory = () => {
 
       if (res.data.success) {
         uploadedImageUrls.push(res.data.data.url);
-        console.log(uploadedImageUrls);
+        // console.log(uploadedImageUrls);
       }
     });
 

@@ -76,7 +76,7 @@ const MyAssignedTours = () => {
             </thead>
             <tbody>
               {assignedTours.map((item, index) => (
-                <tr key={item._id} className="bg-base-200">
+                <tr key={item._id} className="bg-teal-100">
                   <th>{index + 1}</th>
                   <td>{item.packageName}</td>
                   <td>{item.touristName}</td>

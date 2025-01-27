@@ -111,7 +111,7 @@ const Dashboard = () => {
             {isAdmin && (
               <>
                 <li>
-                  <NavLink to="/dashboard/manageProfile">
+                  <NavLink to="/dashboard/adminProfile">
                     Manage Profile
                   </NavLink>
                 </li>
@@ -119,7 +119,7 @@ const Dashboard = () => {
                   <NavLink to="/dashboard/addPackage">Add Package</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/manageUsers">Manage Users</NavLink>
+                  <NavLink to="/dashboard/manageUsers">Manage Users</NavLink>
                 </li>
                 <li>
                   <NavLink to="/dashboard/manageCandidates">

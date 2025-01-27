@@ -19,6 +19,10 @@ import EditStory from "../pages/Dashboard/EditStory";
 import MyAssignedTours from "../pages/Dashboard/MyAssignedTours";
 import GuideRoutes from "./GuideRoutes";
 import Payment from "../pages/Dashboard/Payment";
+import AdminRoutes from "./AdminRoutes";
+import ManageUsers from "../pages/Dashboard/ManageUsers";
+import ManageCandidates from "../pages/Dashboard/ManageCandidates";
+import AdminProfile from "../pages/Dashboard/AdminProfile";
 
 const router = createBrowserRouter([
   {
@@ -107,6 +111,31 @@ const router = createBrowserRouter([
           <GuideRoutes>
             <MyAssignedTours></MyAssignedTours>
           </GuideRoutes>
+        ),
+      },
+      // admin route
+      {
+        path: "manageUsers",
+        element: (
+          <AdminRoutes>
+            <ManageUsers></ManageUsers>
+          </AdminRoutes>
+        ),
+      },
+      {
+        path: "manageCandidates",
+        element: (
+          <AdminRoutes>
+            <ManageCandidates></ManageCandidates>
+          </AdminRoutes>
+        ),
+      },
+      {
+        path: "adminProfile",
+        element: (
+          <AdminRoutes>
+            <AdminProfile></AdminProfile>
+          </AdminRoutes>
         ),
       },
     ],

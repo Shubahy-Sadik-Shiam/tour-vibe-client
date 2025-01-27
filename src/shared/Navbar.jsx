@@ -3,9 +3,11 @@ import logo from "../assets/logo.png";
 import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
 import Toast from "../hooks/Toast";
+import useAdmin from "../hooks/useAdmin";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
+  const [isAdmin] = useAdmin();
   const location = useLocation();
   const isNotHomePage = location.pathname !== "/";
   const links = (
@@ -114,7 +116,7 @@ const Navbar = () => {
                     <a onClick={handleLogOut}>Log out</a>
                   </li>
                   <li className="btn btn-block btn-xs mb-2">
-                    <Link to="/dashboard/manageProfile">Dashboard</Link>
+                    <Link to={isAdmin?"/dashboard/adminProfile":"/dashboard/manageProfile" }>Dashboard</Link>
                   </li>
                 </ul>
               </div>

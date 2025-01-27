@@ -8,8 +8,8 @@ const MainLayout = () => {
       <Navbar></Navbar>
       <div className="bg-[#FFFFF0]">
         <Outlet></Outlet>
+        <Footer></Footer>
       </div>
-      <Footer></Footer>
     </div>
   );
 };
