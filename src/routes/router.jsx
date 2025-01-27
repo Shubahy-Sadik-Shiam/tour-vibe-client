@@ -16,6 +16,9 @@ import AddStories from "../pages/Dashboard/AddStories";
 import ManageStory from "../pages/Dashboard/ManageStory";
 import JoinAsGuide from "../pages/Dashboard/JoinAsGuide";
 import EditStory from "../pages/Dashboard/EditStory";
+import MyAssignedTours from "../pages/Dashboard/MyAssignedTours";
+import GuideRoutes from "./GuideRoutes";
+import Payment from "../pages/Dashboard/Payment";
 
 const router = createBrowserRouter([
   {
@@ -92,6 +95,19 @@ const router = createBrowserRouter([
       {
         path: "editStory/:id",
         element: <EditStory></EditStory>,
+      },
+      {
+        path: "payment/:package",
+        element: <Payment></Payment>,
+      },
+      // Guide routes
+      {
+        path: "myAssignedTours",
+        element: (
+          <GuideRoutes>
+            <MyAssignedTours></MyAssignedTours>
+          </GuideRoutes>
+        ),
       },
     ],
   },

@@ -3,6 +3,8 @@ import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { MdCancel } from "react-icons/md";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
+
 
 const MyBookings = () => {
   const { user } = useAuth();
@@ -70,7 +72,9 @@ const MyBookings = () => {
                   <td>BDT {item.price}</td>
                   <td>{item.status}</td>
                   <td>
+                    <Link to={`/dashboard/payment/${item._id}`}>
                     <button className="btn btn-accent btn-sm text-white">Pay</button>
+                    </Link>
                   </td>
                   <td>
                     {

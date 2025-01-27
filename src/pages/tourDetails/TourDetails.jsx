@@ -4,9 +4,15 @@ import Featured from "./featured/Featured";
 import ReactStars from "react-rating-stars-component";
 import AllGuides from "./AllGuides";
 import BookingForm from "./BookingForm";
+import useAuth from "../../hooks/useAuth";
+import useGuide from "../../hooks/useGuide";
+import useAdmin from "../../hooks/useAdmin";
 
 const TourDetails = () => {
   const trip = useLoaderData();
+  const {user} = useAuth();
+  const [isGuide] = useGuide();
+  const [isAdmin] = useAdmin();
   const {
     tripTitle,
     tourType,

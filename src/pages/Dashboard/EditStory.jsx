@@ -6,6 +6,7 @@ import { MdCancel } from "react-icons/md";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import Toast from "../../hooks/Toast";
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
@@ -14,6 +15,7 @@ const EditStory = () => {
   const { register, handleSubmit } = useForm();
   const params = useParams();
   const id = params.id;
+  const [loading, setLoading] = useState(false);
 
   const axiosSecure = useAxiosSecure();
   const axiosPublic = useAxiosPublic();
@@ -41,6 +43,7 @@ const EditStory = () => {
     // upload image to imgbb and then get an url
     const images = data.images;
     const uploadedImageUrls = [];
+    setLoading(true);
 
     const uploadPromises = Array.from(images).map(async (image) => {
       const formData = new FormData();
@@ -76,6 +79,7 @@ const EditStory = () => {
         text: "Story has been updated",
         icon: "success",
       });
+      setLoading(false);
       refetch();
     } else {
       Toast.fire({
@@ -86,6 +90,11 @@ const EditStory = () => {
   };
   return (
     <div>
+      {loading && (
+        <div className="flex mt-4 items-center justify-center">
+          <span className="loading loading-spinner loading-lg"></span>
+        </div>
+      )}
       <h2 className="text-4xl font-bold text-center my-10 bg-gradient-to-r from-black to-teal-400 bg-clip-text text-transparent">
         Update Your Story
       </h2>
@@ -122,6 +131,7 @@ const EditStory = () => {
                   alt={`Image ${index + 1}`}
                 />
                 <button
+                  type="button"
                   onClick={() => handleRemoveImage(image)}
                   className="absolute top-0 right-0"
                 >

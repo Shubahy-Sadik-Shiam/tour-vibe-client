@@ -19,7 +19,7 @@ const BookingForm = ({ trip }) => {
 
   const [startDate, setStartDate] = useState(new Date());
 
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
     const initialData = {
