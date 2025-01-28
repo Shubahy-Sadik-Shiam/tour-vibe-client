@@ -24,6 +24,7 @@ import ManageUsers from "../pages/Dashboard/ManageUsers";
 import ManageCandidates from "../pages/Dashboard/ManageCandidates";
 import AdminProfile from "../pages/Dashboard/AdminProfile";
 import ErrorPage from "../pages/ErrorPage";
+import AddPackage from "../pages/Dashboard/AddPackage";
 
 const router = createBrowserRouter([
   {
@@ -137,6 +138,14 @@ const router = createBrowserRouter([
         element: (
           <AdminRoutes>
             <AdminProfile></AdminProfile>
+          </AdminRoutes>
+        ),
+      },
+      {
+        path: "addPackage",
+        element: (
+          <AdminRoutes>
+            <AddPackage></AddPackage>
           </AdminRoutes>
         ),
       },
