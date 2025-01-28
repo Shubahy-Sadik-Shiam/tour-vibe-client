@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
+import { motion } from "motion/react";
 
 const TourCard = ({ item }) => {
     const {tripPhoto, tripTitle, tourType, price, _id} = item;
   return (
-    <div className="card bg-base-100 shadow-xl">
+    <motion.div whileHover={{scale:0.9}} whileTap={{scale:0.5}}
+    transition={{ duration: 0.5, ease: "easeInOut" }}  className="card bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
         <img
           src={tripPhoto}
@@ -21,7 +23,7 @@ const TourCard = ({ item }) => {
           <Link to={`/tourDetails/${_id}`}><button className="btn btn-accent text-white">View Details</button></Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

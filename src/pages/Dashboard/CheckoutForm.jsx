@@ -89,9 +89,6 @@ const CheckoutForm = () => {
           price: price,
           transactionId: paymentIntent.id,
           date: new Date(),
-          //   cartIds: cart.map((item) => item._id),
-          //   menuItemIds: cart.map((item) => item.menuId),
-          //   status: "pending",
         };
 
         const res = await axiosSecure.post("/payments", paymentInfo);

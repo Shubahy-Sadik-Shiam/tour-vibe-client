@@ -33,7 +33,7 @@ const JoinAsGuide = () => {
     <div>
       <form
         onSubmit={handleSubmit}
-        className="bg-teal-100 w-1/2 mx-auto p-10 my-10 rounded-xl"
+        className="bg-teal-100 md:w-1/2 mx-auto p-10 my-10 rounded-xl"
       >
         <p className="text-3xl font-bold text-center mb-10 bg-gradient-to-r from-black to-teal-400 bg-clip-text text-transparent">
           Join As a Tour Guide

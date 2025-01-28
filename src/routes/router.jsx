@@ -23,11 +23,13 @@ import AdminRoutes from "./AdminRoutes";
 import ManageUsers from "../pages/Dashboard/ManageUsers";
 import ManageCandidates from "../pages/Dashboard/ManageCandidates";
 import AdminProfile from "../pages/Dashboard/AdminProfile";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",

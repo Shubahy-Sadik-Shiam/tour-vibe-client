@@ -76,7 +76,7 @@ const AddStories = () => {
       <div>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="w-1/2 mx-auto bg-teal-100 p-10 mb-10 rounded-xl"
+          className="md:w-1/2 mx-auto bg-teal-100 p-10 mb-10 rounded-xl"
         >
           <div>
             <input

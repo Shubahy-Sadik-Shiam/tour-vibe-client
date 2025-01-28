@@ -1,9 +1,12 @@
 import ReactStars from "react-rating-stars-component";
 import { Link } from "react-router-dom";
+import { motion } from "motion/react";
+
 const GuidesCard = ({ guide }) => {
   const { image, name, rating, location, _id } = guide;
   return (
-    <div className="card bg-base-100 shadow-md">
+    <motion.div whileHover={{scale:0.9}} whileTap={{scale:0.5}}
+    transition={{ duration: 0.5, ease: "easeInOut" }}  className="card bg-base-100 shadow-md">
       <figure className="px-10 pt-5">
         <img
           src={image}
@@ -23,7 +26,7 @@ const GuidesCard = ({ guide }) => {
           <Link to={`/guideProfile/${_id}`}><button className="btn btn-accent text-white mt-2">View Details</button></Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
