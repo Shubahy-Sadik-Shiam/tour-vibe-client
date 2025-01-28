@@ -7,6 +7,7 @@ const ManageUsers = () => {
   const axiosSecure = useAxiosSecure();
   const axiosPublic = useAxiosPublic();
   const [users, setUsers] = useState([]);
+  const [selectedRole, setSelectedRole] = useState("");
   const { data: allUsers = [], refetch } = useQuery({
     queryKey: ["allUsers"],
     queryFn: async () => {
@@ -19,11 +20,18 @@ const ManageUsers = () => {
   const handleSearch = async (e) => {
     e.preventDefault();
     const query = e.target.query.value;
-    const response = await axiosPublic.get(`/search?query=${query}`);
+    const response = await axiosSecure.get(`/search?query=${query}`);
     setUsers(response.data);
-    console.log(response.data);
     return response.data;
   };
+
+  const handleFilterByRole = (role) =>{
+    setSelectedRole(role)
+    axiosSecure.get(`/user/${role}`).then(res=>{
+      setUsers(res.data);
+      return res.data;
+    })
+  }
   return (
     <div>
       <h2 className="text-4xl font-bold text-center bg-gradient-to-r from-black to-teal-400 bg-clip-text text-transparent my-10">
@@ -47,13 +55,13 @@ const ManageUsers = () => {
           </form>
         </div>
         <div>
-          <select className="select select-accent">
-            <option disabled selected>
+          <select value={selectedRole}  onChange={(e) => handleFilterByRole(e.target.value)} className="select select-accent">
+            <option value="" disabled>
               Filter by role
             </option>
-            <option>Admin</option>
-            <option>Tour Guide</option>
-            <option>Tourist</option>
+            <option value="admin">Admin</option>
+            <option value="guide ">Tour Guide</option>
+            <option value="tourist">Tourist</option>
           </select>
         </div>
       </div>

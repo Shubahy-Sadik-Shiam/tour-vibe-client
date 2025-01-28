@@ -9,6 +9,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Toast from "../../hooks/Toast";
+import Confetti from 'react-confetti'
+import { useWindowSize } from "react-use";
 
 const BookingForm = ({ trip }) => {
   const { user } = useAuth();
@@ -18,8 +20,10 @@ const BookingForm = ({ trip }) => {
   const axiosSecure = useAxiosSecure();
 
   const [startDate, setStartDate] = useState(new Date());
+  const { width, height } = useWindowSize();
 
   const { register, handleSubmit } = useForm();
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const onSubmit = (data) => {
     const initialData = {
@@ -48,6 +52,25 @@ const BookingForm = ({ trip }) => {
         }
       });
     } else {
+
+      axiosSecure.get(`/bookings/count/${user.email}`)
+      .then(res=>{
+        // console.log(res.data);
+        const bookingCount = res.data?.count;
+        if(bookingCount >= 3){
+          setShowConfetti(true)
+          Swal.fire({
+            title: "Congratulation!",
+            text: "You have booked more 3 times!",
+            icon: "success"
+          });
+          setTimeout(() => {
+            setShowConfetti(false);
+          }, 20000); 
+        }
+        
+      })
+
       axiosSecure
         .post("/bookings", initialData)
         .then((res) => {
@@ -76,6 +99,7 @@ const BookingForm = ({ trip }) => {
 
   return (
     <div className="pb-10">
+      {showConfetti && <Confetti width={width} height={height} />}
       <h2 className="text-4xl bg-gradient-to-r from-black to-teal-400 bg-clip-text text-transparent mb-10 font-bold text-center">
         Book Your Dream Trip Now
       </h2>

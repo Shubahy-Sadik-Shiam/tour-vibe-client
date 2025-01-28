@@ -37,13 +37,13 @@ const router = createBrowserRouter([
         path: "/tourDetails/:id",
         element: <TourDetails></TourDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/packages/${params.id}`),
+          fetch(`https://tour-vibe-server.vercel.app/packages/${params.id}`),
       },
       {
         path: "/guideProfile/:id",
         element: <GuideProfile></GuideProfile>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/guide/${params.id}`),
+          fetch(`https://tour-vibe-server.vercel.app/guide/${params.id}`),
       },
       {
         path: "/aboutUs",
