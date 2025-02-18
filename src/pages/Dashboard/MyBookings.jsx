@@ -25,7 +25,7 @@ const MyBookings = () => {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Yes, cancel it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
         const res = await axiosSecure.delete(`/bookings/${item._id}`);

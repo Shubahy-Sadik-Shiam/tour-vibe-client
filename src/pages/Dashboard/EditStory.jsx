@@ -16,6 +16,7 @@ const EditStory = () => {
   const params = useParams();
   const id = params.id;
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const axiosSecure = useAxiosSecure();
   const axiosPublic = useAxiosPublic();
@@ -81,6 +82,7 @@ const EditStory = () => {
       });
       setLoading(false);
       refetch();
+      navigate("/dashboard/manageStories");
     } else {
       Toast.fire({
         icon: "error",

@@ -20,8 +20,8 @@ const ManageCandidates = () => {
           axiosSecure.delete(`/application/${item._id}`).then((res) => {
             if (res.data.deletedCount > 0) {
               Swal.fire({
-                title: "Deleted!",
-                text: "Application has been deleted",
+                title: "Success",
+                text: "Tourist role has been changed to Tour Guide",
                 icon: "success",
               });
               refetch();
@@ -39,7 +39,7 @@ const ManageCandidates = () => {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Yes, Reject!",
     }).then(async (result) => {
       if (result.isConfirmed) {
         const res = await axiosSecure.delete(`/application/${item._id}`);

@@ -19,17 +19,18 @@ const Banner = () => {
       bgImage={bg}
       bgImageAlt="travel"
       strength={-200}
+      bgImageStyle={{ objectFit: "cover" }}
     >
       <div className="hero min-h-screen">
         <div className="hero-overlay"></div>
         <div className="text-neutral-content max-sm:hero-content">
           <div className="lg:flex items-center">
             <div className="lg:w-3/6 md:ml-10">
-              <h1 className="mb-5 text-3xl md:text-5xl font-bold">
+              <h1 className="mb-5 text-3xl md:text-5xl font-bold text-white md:leading-tight">
                 Embark on Extraordinary Journeys with TourVibe and Create
                 Lifelong Memories
               </h1>
-              <p className="md:w-[600px]">
+              <p className="md:w-[600px] text-white">
                 Step into a world of unseen adventures, where every journey is
                 tailored to your dreams. Discover breathtaking destinations,
                 embrace new experiences, and create unforgettable stories that

@@ -1,5 +1,4 @@
 import useAuth from "../../hooks/useAuth";
-import useGuides from "../../hooks/useGuides";
 import bg from "../../assets/1196495_17122303270060592537.jpg";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -11,19 +10,29 @@ import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Toast from "../../hooks/Toast";
 import Confetti from 'react-confetti'
 import { useWindowSize } from "react-use";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
 
 const BookingForm = ({ trip }) => {
   const { user } = useAuth();
-  const [allGuides] = useGuides();
   const navigate = useNavigate();
   const location = useLocation();
   const axiosSecure = useAxiosSecure();
+  const axiosPublic = useAxiosPublic();
 
   const [startDate, setStartDate] = useState(new Date());
   const { width, height } = useWindowSize();
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const [showConfetti, setShowConfetti] = useState(false);
+
+  const { data: guides = [] } = useQuery({
+    queryKey: ["guides"],
+    queryFn: async () => {
+      const res = await axiosPublic.get("/user/guide");
+      return res.data;
+    },
+  });
 
   const onSubmit = (data) => {
     const initialData = {
@@ -66,7 +75,7 @@ const BookingForm = ({ trip }) => {
           });
           setTimeout(() => {
             setShowConfetti(false);
-          }, 20000); 
+          }, 5000); 
         }
         
       })
@@ -86,6 +95,7 @@ const BookingForm = ({ trip }) => {
               focusConfirm: false,
               showConfirmButton: false
             });
+            reset();
           }
         })
         .catch((error) => {
@@ -200,7 +210,7 @@ const BookingForm = ({ trip }) => {
                 <option disabled selected>
                   Select a Tour Guide
                 </option>
-                {allGuides.map((guide) => (
+                {guides.map((guide) => (
                   <option className="text-black" key={guide._id}>
                     {guide.name}
                   </option>
