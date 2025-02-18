@@ -1,10 +1,10 @@
 import CountUp from "react-countup";
 
 const Stats = () => {
-    return (
-        <div className="py-20 text-center">
-      <div className="stats max-sm:inline-block  shadow">
-        <div className="stat place-items-center lg:w-80">
+  return (
+    <div className="my-24 text-center">
+      <div className="stats max-sm:inline-block shadow">
+        <div className="stat place-items-center lg:w-96">
           <div className="stat-title">Online Users</div>
           <CountUp
             className="stat-value"
@@ -49,7 +49,7 @@ const Stats = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default Stats;

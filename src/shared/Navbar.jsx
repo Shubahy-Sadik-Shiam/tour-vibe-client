@@ -78,7 +78,7 @@ const Navbar = () => {
       localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
-      document.body.style.backgroundColor = "#FFFFF0";
+      document.body.style.backgroundColor = "#F4F1F8";
       localStorage.setItem("theme", "light");
     }
   }, [isDark]);
@@ -119,7 +119,7 @@ const Navbar = () => {
   return (
     <div>
       <div
-        className={`navbar px-10 fixed z-10 text-white p-4  ${
+        className={`navbar md:px-10 fixed z-10 text-white p-4  ${
           isNotHomePage ? "bg-gradient-to-br from-teal-900 via-teal-500 to-teal-700 " : `bg-transparent ${isScrolled ? "backdrop-blur-md bg-gray-900/30" : ""}`
         }`}
       >
@@ -128,7 +128,7 @@ const Navbar = () => {
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-7 w-7"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -143,7 +143,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] text-black mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-white rounded-box z-[1] text-black mt-3 w-52 p-2 shadow"
             >
               {links}
             </ul>

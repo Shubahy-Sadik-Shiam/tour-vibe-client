@@ -131,10 +131,9 @@ const Dashboard = () => {
           </ul>
         </div>
         <div className="flex-1 ml-[20%]">
-          <div className="min-h-[459px]">
+          <div className="">
             <Outlet></Outlet>
           </div>
-          <Footer></Footer>
         </div>
       </div>
     </div>

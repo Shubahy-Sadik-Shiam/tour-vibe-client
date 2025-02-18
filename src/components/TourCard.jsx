@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
+import { FaHiking } from "react-icons/fa";
 
 const TourCard = ({ item }) => {
     const {tripPhoto, tripTitle, tourType, price, _id} = item;
   return (
-    <motion.div whileHover={{scale:0.9}} whileTap={{scale:0.5}}
+    <motion.div whileHover={{scale:0.95}}
     transition={{ duration: 0.5, ease: "easeInOut" }}  className="card bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
         <img
@@ -14,10 +15,10 @@ const TourCard = ({ item }) => {
         />
       </figure>
       <div className="card-body items-center text-center">
-        <h2 className="card-title text-2xl">{tripTitle}</h2>
-       <div className="">
-       <p><span className="text-gray-600">Tour type:</span> <span className="font-bold">{tourType}</span></p>
-       <p><span className="text-gray-600">Price:</span> <span className="font-bold text-2xl text-yellow-500">{price}</span>/ person</p>
+       <div className="h-40">
+       <h2 className="card-title text-2xl font-bold">{tripTitle}</h2>
+       <p className="flex items-center gap-2 justify-center mb-1 mt-4"><span className="text-2xl"><FaHiking /></span> <span className="font-bold text-xl">{tourType}</span></p>
+       <p className="mb-2"><span className="font-bold text-3xl text-yellow-500">{price}</span>/ person</p>
        </div>
         <div className="card-actions">
           <Link to={`/tourDetails/${_id}`}><button className="btn btn-accent text-white">View Details</button></Link>

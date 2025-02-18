@@ -9,8 +9,8 @@ import guides from "../../assets/guides.png";
 const TourismTravelGuide = () => {
   const [tabIndex, setTabIndex] = useState(0);
   return (
-    <div>
-      <p className="text-4xl font-bold text-center my-10 bg-gradient-to-r from-black to-teal-400 bg-clip-text text-transparent">
+    <div className="mt-28">
+      <p className="lg:text-5xl md:text-4xl text-3xl w-10/12 mx-auto font-semibold text-center mb-14 bg-gradient-to-r from-black to-teal-400 bg-clip-text text-transparent lg:leading-tight">
         From Experts to Experiences: Your <br /> Journey Starts Here
       </p>
       <div className="w-10/12 mx-auto">

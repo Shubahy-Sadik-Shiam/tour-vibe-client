@@ -37,7 +37,7 @@ const Banner = () => {
                 last a lifetime.
               </p>
             </div>
-            <div className="lg:w-1/2 max-sm:hidden md:w-2/3 absolute lg:right-10 md:right-36">
+            <div className="lg:w-1/2 max-sm:hidden md:w-2/3 absolute md:mt-10 lg:mt-0 lg:right-10 md:right-36">
               <Swiper
                 effect={"coverflow"}
                 grabCursor={true}
