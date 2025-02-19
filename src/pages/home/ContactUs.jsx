@@ -1,10 +1,10 @@
 import Lottie from "lottie-react";
 import data from "../../assets/lottie2.json";
-import { FaFacebook, FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { CiFacebook } from "react-icons/ci";
+import { FaGithub } from "react-icons/fa";
+import { CiFacebook, CiLinkedin } from "react-icons/ci";
 const ContactUs = () => {
   return (
-    <div className="w-10/12 mx-auto my-24">
+    <div className="w-10/12 mx-auto mb-20 mt-32">
       <h2 className="lg:text-5xl md:text-4xl text-3xl font-semibold text-center mb-16 bg-gradient-to-r from-black to-teal-400 bg-clip-text text-transparent">
         Contact Us
       </h2>
@@ -22,13 +22,13 @@ const ContactUs = () => {
                 href="https://www.linkedin.com/in/shubahy-sadik-shiam-63044834b/"
                 target="_blank"
               >
-                <button className="btn btn-accent btn-block text-lg">
+                <button className="btn btn-accent text-white btn-block text-lg">
                   LinkedIn
-                  <FaLinkedinIn className="text-3xl text-white bg-blue-400 p-1" />
+                  <CiLinkedin className="text-3xl" />
                 </button>
               </a>
               <a href="https://github.com/Shubahy-Sadik-Shiam" target="_blank">
-                <button className="btn text-lg btn-accent btn-block my-3">
+                <button className="btn text-lg text-white btn-accent btn-block my-3">
                   Github <FaGithub className="text-3xl" />
                 </button>
               </a>

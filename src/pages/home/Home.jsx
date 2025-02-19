@@ -6,6 +6,7 @@ import TouristStory from "./TouristStory";
 import TopDestinations from "./TopDestinations";
 import Stats from "./Stats";
 import ContactUs from "./ContactUs";
+import OurStory from "./OurStory";
 const Home = () => {
     return (
         <div>
@@ -18,6 +19,7 @@ const Home = () => {
             <TouristStory></TouristStory>
             <TopDestinations></TopDestinations>
             <Stats></Stats>
+            <OurStory></OurStory>
             <ContactUs></ContactUs>
         </div>
     );
