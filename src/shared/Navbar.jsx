@@ -120,7 +120,7 @@ const Navbar = () => {
     <div>
       <div
         className={`navbar md:px-10 fixed z-10 text-white p-4  ${
-          isNotHomePage ? "bg-gradient-to-br from-teal-900 via-teal-500 to-teal-700 " : `bg-transparent ${isScrolled ? "backdrop-blur-md bg-gray-900/25" : ""}`
+          isNotHomePage ? "bg-gradient-to-br from-teal-900 via-teal-500 to-teal-700 " : `bg-transparent ${isScrolled ? "bg-gradient-to-br from-teal-900 via-teal-500 to-teal-700" : ""}`
         }`}
       >
         <div className="navbar-start">

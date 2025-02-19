@@ -17,7 +17,7 @@ const ContactUs = () => {
             <p className="text-lg"> Email: shorgoshiam@gmail.com</p>
             <p className="text-lg">Phone: 01317129812</p>
             <div className="text-lg w-80 mx-auto rounded-md bg-teal-200 mt-5 px-10 py-5">
-              <p className="text-2xl text-center mb-5 font-semibold">Let's Connect</p>
+              <p className="text-2xl text-center text-teal-600 mb-5 font-bold">Let's Connect</p>
               <a
                 href="https://www.linkedin.com/in/shubahy-sadik-shiam-63044834b/"
                 target="_blank"
