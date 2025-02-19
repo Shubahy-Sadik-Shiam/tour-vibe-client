@@ -5,6 +5,7 @@ import TourismTravelGuide from "./TourismTravelGuide";
 import TouristStory from "./TouristStory";
 import TopDestinations from "./TopDestinations";
 import Stats from "./Stats";
+import ContactUs from "./ContactUs";
 const Home = () => {
     return (
         <div>
@@ -17,6 +18,7 @@ const Home = () => {
             <TouristStory></TouristStory>
             <TopDestinations></TopDestinations>
             <Stats></Stats>
+            <ContactUs></ContactUs>
         </div>
     );
 };

@@ -78,7 +78,7 @@ const Navbar = () => {
       localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
-      document.body.style.backgroundColor = "#F4F1F8";
+      document.body.style.backgroundColor = "#FFFFF0";
       localStorage.setItem("theme", "light");
     }
   }, [isDark]);
@@ -120,7 +120,7 @@ const Navbar = () => {
     <div>
       <div
         className={`navbar md:px-10 fixed z-10 text-white p-4  ${
-          isNotHomePage ? "bg-gradient-to-br from-teal-900 via-teal-500 to-teal-700 " : `bg-transparent ${isScrolled ? "backdrop-blur-md bg-gray-900/30" : ""}`
+          isNotHomePage ? "bg-gradient-to-br from-teal-900 via-teal-500 to-teal-700 " : `bg-transparent ${isScrolled ? "backdrop-blur-md bg-gray-900/25" : ""}`
         }`}
       >
         <div className="navbar-start">
@@ -172,7 +172,7 @@ const Navbar = () => {
                 </div>
                 <ul
                   tabIndex={0}
-                  className="dropdown-content  bg-black bg-opacity-20 backdrop-blur-lg rounded-box z-[1] w-52 p-2 shadow"
+                  className="dropdown-content  bg-black bg-opacity-70 mt-5 backdrop-blur-lg  rounded-box z-[1] w-52 p-2 shadow"
                 >
                   <div className="flex flex-col items-center">
                     <img

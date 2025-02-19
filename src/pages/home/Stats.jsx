@@ -2,7 +2,7 @@ import CountUp from "react-countup";
 
 const Stats = () => {
   return (
-    <div className="my-24 text-center">
+    <div className="mt-24 text-center">
       <div className="stats max-sm:inline-block shadow">
         <div className="stat place-items-center lg:w-96">
           <div className="stat-title">Online Users</div>
