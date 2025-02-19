@@ -150,7 +150,7 @@ const Navbar = () => {
           </div>
           <div>
             <div className="flex">
-              <a className="text-4xl font-bold">TourVibe</a>
+              <Link to="/" className="text-4xl font-bold">TourVibe</Link>
               <img className="w-10 object-cover" src={logo} alt="" />
             </div>
             <p className="text-xs ml-10">Journey Beyond Limits</p>
