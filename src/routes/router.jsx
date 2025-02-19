@@ -25,6 +25,7 @@ import ManageCandidates from "../pages/Dashboard/ManageCandidates";
 import AdminProfile from "../pages/Dashboard/AdminProfile";
 import ErrorPage from "../pages/ErrorPage";
 import AddPackage from "../pages/Dashboard/AddPackage";
+import Guides from "../pages/Guides";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: "/community",
         element: <Community></Community>,
+      },
+      {
+        path: "/guides",
+        element: <Guides></Guides>,
       },
     ],
   },

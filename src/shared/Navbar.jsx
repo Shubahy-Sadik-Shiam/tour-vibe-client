@@ -31,6 +31,9 @@ const Navbar = () => {
         <NavLink to="/trips">Trips</NavLink>
       </li>
       <li>
+        <NavLink to="/guides">Guides</NavLink>
+      </li>
+      <li>
         <label className="flex cursor-pointer gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
